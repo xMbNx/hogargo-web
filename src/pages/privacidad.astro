@@ -1,0 +1,358 @@
+---
+const email = "hogargoapp@gmail.com";
+const actualizacion = "1 de octubre de 2026";
+const title = "Política de privacidad | HogarGo";
+const description =
+  "Qué datos trata HogarGo, para qué los usa, con quién los comparte y cómo puedes ejercer tus derechos o eliminar tus datos.";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#005cff" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/logoandroid.png" />
+  </head>
+
+  <body>
+    <header class="top">
+      <a class="brand" href="/" aria-label="HogarGo, inicio">
+        <img src="/logoandroid.png" alt="" width="40" height="40" />
+        <span>HogarGo</span>
+      </a>
+      <a class="back" href="/">← Volver</a>
+    </header>
+
+    <main class="doc">
+      <h1>Política de privacidad</h1>
+      <p class="meta">Última actualización: {actualizacion}</p>
+
+      <p>
+        Esta política explica qué datos trata la aplicación <strong>HogarGo</strong> para Android
+        (en adelante, «la app»), para qué se usan y qué derechos tienes. Si tienes cualquier duda,
+        escríbenos a <a href={`mailto:${email}`}>{email}</a>.
+      </p>
+
+      <nav class="toc" aria-label="Contenido">
+        <a href="#responsable">Responsable</a>
+        <a href="#datos">Datos que tratamos</a>
+        <a href="#finalidad">Para qué los usamos</a>
+        <a href="#terceros">Con quién se comparten</a>
+        <a href="#conservacion">Conservación</a>
+        <a href="#eliminar-datos">Eliminar tus datos</a>
+        <a href="#derechos">Tus derechos</a>
+        <a href="#menores">Menores</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#cambios">Cambios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <h2 id="responsable">1. Responsable del tratamiento</h2>
+      <p>
+        El responsable es el desarrollador de HogarGo. Puedes contactar para cualquier asunto de
+        privacidad en <a href={`mailto:${email}`}>{email}</a>.
+      </p>
+
+      <h2 id="datos">2. Datos que tratamos</h2>
+
+      <h3>Cuenta y perfil</h3>
+      <ul>
+        <li>
+          <strong>Inicio de sesión con Google:</strong> identificador de usuario, nombre, correo
+          electrónico y foto de perfil asociados a tu cuenta de Google. No recibimos ni guardamos tu
+          contraseña de Google.
+        </li>
+        <li>Avatar elegido dentro de la app y nombre con el que apareces en tu hogar.</li>
+      </ul>
+
+      <h3>Contenido que introduces en la app</h3>
+      <ul>
+        <li>Hogares, miembros y personas añadidas (también las que no tienen cuenta).</li>
+        <li>Tareas, asignaciones, registros, puntuaciones y planificación.</li>
+        <li>Listas de la compra y productos.</li>
+        <li>
+          Movimientos de economía compartida (gastos, pagos, saldos) y, si usas esa función,
+          finanzas personales: cuenta, ingresos, movimientos y presupuestos.
+        </li>
+        <li>Ajustes de la app (idioma, paneles visibles, modo del hogar, etc.).</li>
+      </ul>
+
+      <h3>Datos técnicos y de uso</h3>
+      <ul>
+        <li>
+          <strong>Token de notificaciones</strong> (Firebase Cloud Messaging) para enviarte avisos
+          del hogar.
+        </li>
+        <li>
+          <strong>Estadísticas de uso y diagnóstico</strong> a través de Firebase Analytics:
+          eventos de uso de la app, información del dispositivo (modelo, versión de Android,
+          idioma) e identificadores de instalación. La app declara el permiso de
+          <em>identificador de publicidad</em> porque la biblioteca de Google puede usarlo para
+          estas mediciones. <strong>HogarGo no muestra publicidad</strong> ni vende tus datos.
+        </li>
+      </ul>
+
+      <h3>Compras</h3>
+      <p>
+        Si adquieres <strong>HogarPlus</strong>, el pago lo gestiona Google Play. Nosotros no
+        recibimos tus datos de pago. Solo guardamos y verificamos con Google el token de compra para
+        activar o restaurar HogarPlus en tu hogar.
+      </p>
+
+      <h3>Datos que NO recogemos</h3>
+      <p>
+        No accedemos a tu ubicación, contactos, micrófono, cámara ni archivos del dispositivo. Los
+        permisos que usa la app son: acceso a Internet, estado de la red y envío de notificaciones.
+      </p>
+
+      <h2 id="finalidad">3. Para qué usamos los datos</h2>
+      <ul>
+        <li>Crear tu cuenta, identificarte y sincronizar tu hogar entre los dispositivos de sus miembros.</li>
+        <li>Ofrecer las funciones de la app: tareas, compras, economía y planificador.</li>
+        <li>Enviar notificaciones relacionadas con tu hogar.</li>
+        <li>Activar y comprobar las compras de HogarPlus.</li>
+        <li>Mejorar la app, detectar errores y entender qué funciones se usan (estadísticas agregadas).</li>
+      </ul>
+      <p>
+        Las bases legales son la ejecución del servicio que solicitas al usar la app, tu
+        consentimiento cuando corresponda (por ejemplo, las notificaciones) y nuestro interés
+        legítimo en mantener la app segura y funcionando correctamente.
+      </p>
+
+      <h2 id="terceros">4. Con quién se comparten</h2>
+      <p>
+        No vendemos tus datos. Los datos se almacenan y procesan con proveedores de servicios:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Functions,
+          Cloud Messaging y Analytics) y <strong>Google Play</strong> (Billing). Pueden tratar datos
+          fuera de tu país; Google aplica las garantías previstas en la normativa de protección de
+          datos. Más información en la
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            política de privacidad de Google
+          </a>.
+        </li>
+        <li>
+          <strong>Otros miembros de tu hogar:</strong> lo que registras en un hogar compartido
+          (tareas, compras, gastos, nombre y avatar) es visible para sus miembros. Tus finanzas
+          personales son privadas y no se muestran al resto del hogar.
+        </li>
+      </ul>
+      <p>También podemos comunicar datos si una autoridad competente nos lo exige legalmente.</p>
+
+      <h2 id="conservacion">5. Conservación</h2>
+      <p>
+        Conservamos tus datos mientras mantengas tu cuenta y tu hogar activos. Al eliminar un hogar
+        se borran sus datos (usuarios, puntuaciones, registros, listas y movimientos). Algunos datos
+        técnicos o de copia de seguridad pueden permanecer un tiempo limitado en los sistemas de los
+        proveedores antes de eliminarse definitivamente. Los datos guardados localmente en tu
+        dispositivo se eliminan al desinstalar la app.
+      </p>
+
+      <h2 id="eliminar-datos">6. Cómo eliminar tus datos</h2>
+      <ul>
+        <li>
+          <strong>Desde la app:</strong> en <em>Configuración → Hogares</em> puedes eliminar un
+          hogar y toda su información (esta acción no se puede deshacer), y eliminar a las personas
+          que hayas añadido.
+        </li>
+        <li>
+          <strong>Eliminar tu cuenta y todos tus datos:</strong> escribe a
+          <a href={`mailto:${email}`}>{email}</a> desde el correo de tu cuenta de Google indicando
+          «Eliminar mi cuenta de HogarGo». Lo gestionaremos en un plazo máximo de 30 días.
+        </li>
+        <li>
+          También puedes retirar el acceso de la app a tu cuenta de Google desde la
+          <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer">
+            configuración de tu cuenta de Google
+          </a>.
+        </li>
+      </ul>
+
+      <h2 id="derechos">7. Tus derechos</h2>
+      <p>
+        Puedes ejercer tus derechos de <strong>acceso, rectificación, supresión, oposición,
+        limitación y portabilidad</strong> escribiendo a <a href={`mailto:${email}`}>{email}</a>.
+        También puedes retirar el consentimiento en cualquier momento (por ejemplo, desactivando
+        las notificaciones en los ajustes de Android) y presentar una reclamación ante la autoridad
+        de control de tu país (en España, la
+        <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">AEPD</a>).
+      </p>
+
+      <h2 id="menores">8. Menores</h2>
+      <p>
+        HogarGo no está dirigida a menores de 14 años y no recogemos conscientemente datos de ellos.
+        Si crees que un menor nos ha facilitado datos, escríbenos y los eliminaremos.
+      </p>
+
+      <h2 id="seguridad">9. Seguridad</h2>
+      <p>
+        Las comunicaciones con los servidores van cifradas y el acceso a los datos de cada hogar
+        está restringido a sus miembros mediante reglas de seguridad. Ningún sistema es infalible,
+        pero aplicamos medidas razonables para proteger tu información.
+      </p>
+
+      <h2 id="cambios">10. Cambios en esta política</h2>
+      <p>
+        Podemos actualizar esta política. Publicaremos la nueva versión en esta página con la fecha
+        de actualización. Si el cambio es relevante, te lo avisaremos también en la app.
+      </p>
+
+      <h2 id="contacto">11. Contacto</h2>
+      <p>
+        <a href={`mailto:${email}`}>{email}</a>
+      </p>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 HogarGo</span>
+      <a href={`mailto:${email}`}>Contacto</a>
+      <a href="/">Inicio</a>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --blue: #005cff;
+    --blue-2: #008cff;
+    --ink: #07172f;
+    --muted: #38506d;
+    --line: rgba(0, 92, 255, 0.14);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+  }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 12% 0%, rgba(53, 182, 255, 0.25), transparent 32%),
+      linear-gradient(180deg, #f5fbff, #eaf6ff 40%, #fff);
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 18px 20px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand img {
+    border-radius: 12px;
+  }
+  .back {
+    color: var(--blue);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .doc {
+    max-width: 860px;
+    margin: 12px auto 40px;
+    padding: clamp(22px, 4vw, 48px);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 70, 170, 0.1);
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .doc h1 {
+    margin: 0 0 6px;
+    color: var(--ink);
+    font-size: clamp(32px, 5vw, 46px);
+    letter-spacing: -0.04em;
+  }
+  .doc h2 {
+    margin: 38px 0 10px;
+    color: var(--ink);
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+  .doc h3 {
+    margin: 22px 0 6px;
+    color: var(--ink);
+    font-size: 18px;
+  }
+  .doc p {
+    margin: 0 0 14px;
+  }
+  .doc ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  .doc li {
+    margin-bottom: 6px;
+  }
+  .doc strong {
+    color: var(--ink);
+  }
+  .doc a {
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .meta {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 22px !important;
+  }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 6px;
+  }
+  .toc a {
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(0, 119, 255, 0.1);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .toc a:hover {
+    background: rgba(0, 119, 255, 0.2);
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 16px 40px;
+    font-weight: 700;
+    color: #45617f;
+  }
+  .footer a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  :focus-visible {
+    outline: 3px solid var(--blue-2);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
