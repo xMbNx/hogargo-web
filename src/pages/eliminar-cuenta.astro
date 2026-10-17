@@ -1,0 +1,323 @@
+---
+const email = "hogargoapp@gmail.com";
+const asuntoEs = encodeURIComponent("Eliminar mi cuenta de HogarGo");
+const asuntoEn = encodeURIComponent("Delete my HogarGo account");
+const suscripciones = "https://play.google.com/store/account/subscriptions";
+const title = "Eliminar tu cuenta | HogarGo";
+const description =
+  "Cómo eliminar tu cuenta de HogarGo desde la app o por correo, y qué datos se borran y cuáles se conservan.";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#005cff" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/logoandroid.png" />
+  </head>
+
+  <body>
+    <header class="top">
+      <a class="brand" href="/" aria-label="HogarGo, inicio">
+        <img src="/logoandroid.png" alt="" width="40" height="40" />
+        <span>HogarGo</span>
+      </a>
+      <a class="back" href="/">← Volver</a>
+    </header>
+
+    <main class="doc">
+      <h1>Eliminar tu cuenta</h1>
+      <p class="meta">HogarGo · app para organizar las tareas, la compra y los gastos del hogar</p>
+
+      <p>
+        Puedes eliminar tu cuenta de HogarGo y tus datos personales en cualquier momento. Aquí
+        tienes cómo hacerlo y qué ocurre con tu información.
+      </p>
+
+      <nav class="toc" aria-label="Contenido">
+        <a href="#app">Desde la app</a>
+        <a href="#correo">Sin la app</a>
+        <a href="#borra">Qué se borra</a>
+        <a href="#conserva">Qué se conserva</a>
+        <a href="#hogarplus">HogarPlus</a>
+        <a href="#english">English</a>
+      </nav>
+
+      <h2 id="app">1. Desde la app (recomendado)</h2>
+      <ol class="pasos">
+        <li>Abre HogarGo e inicia sesión.</li>
+        <li>Ve a <strong>Configuración → Opciones generales</strong>.</li>
+        <li>En <strong>Datos de la aplicación</strong>, pulsa <strong>Eliminar mi cuenta</strong>.</li>
+        <li>Escribe <strong>ELIMINAR</strong> y vuelve a iniciar sesión para confirmar.</li>
+      </ol>
+      <p>La cuenta se elimina en el momento.</p>
+
+      <h2 id="correo">2. Sin la app</h2>
+      <p>
+        Escribe a <a href={`mailto:${email}?subject=${asuntoEs}`}>{email}</a> con el asunto
+        «Eliminar mi cuenta de HogarGo», desde el correo con el que te registraste. Eliminaremos la
+        cuenta en un plazo máximo de 30 días y te lo confirmaremos por correo.
+      </p>
+
+      <h2 id="borra">3. Qué se borra</h2>
+      <ul>
+        <li>Tu cuenta de acceso (correo o Google).</li>
+        <li>Tu perfil: nombre, foto y avatar.</li>
+        <li>Tus finanzas personales: movimientos, presupuestos, ingresos y ahorro.</li>
+        <li>Tus ajustes, avisos y las invitaciones que creaste.</li>
+        <li>Los hogares en los que eras el único miembro, con todo su contenido.</li>
+      </ul>
+
+      <h2 id="conserva">4. Qué se conserva</h2>
+      <ul>
+        <li>
+          Las tareas y los gastos que compartiste en hogares con más personas se mantienen para
+          ellas, porque sus saldos dependen de ellos. Aparecen a nombre de «Usuario eliminado», sin
+          tu nombre, foto ni correo.
+        </li>
+        <li>Si creaste un hogar con más miembros, la propiedad pasa al miembro más antiguo.</li>
+        <li>
+          Algunos datos técnicos o de copia de seguridad pueden permanecer un tiempo limitado en los
+          sistemas de nuestros proveedores antes de eliminarse definitivamente.
+        </li>
+      </ul>
+
+      <h2 id="hogarplus">5. HogarPlus</h2>
+      <p class="aviso">
+        Eliminar la cuenta <strong>no cancela</strong> la suscripción de HogarPlus. Cancélala en
+        <a href={suscripciones} target="_blank" rel="noopener noreferrer">Google Play → Suscripciones</a>.
+        Los registros de pago los gestiona Google Play.
+      </p>
+      <p>
+        Si el hogar que creaste pasa a otro miembro, conservará HogarPlus solo si lo compró otro
+        miembro que sigue en él o si el nuevo dueño tiene HogarPlus. Si no, pasará al plan gratuito.
+      </p>
+
+      <section id="english" class="idioma" lang="en">
+        <h2>Delete your HogarGo account</h2>
+        <h3>In the app</h3>
+        <ol class="pasos">
+          <li>Open HogarGo and sign in.</li>
+          <li>Go to <strong>Settings → General options</strong>.</li>
+          <li>Under <strong>App data</strong>, tap <strong>Delete my account</strong>.</li>
+          <li>Type <strong>DELETE</strong> and sign in again to confirm.</li>
+        </ol>
+        <h3>Without the app</h3>
+        <p>
+          Email <a href={`mailto:${email}?subject=${asuntoEn}`}>{email}</a> with the subject
+          “Delete my HogarGo account” from the address you signed up with. We will delete the
+          account within 30 days and confirm by email.
+        </p>
+        <h3>What is deleted and what is kept</h3>
+        <p>
+          Your login, profile, personal finances, settings, invitations and the homes where you were
+          the only member are deleted. Tasks and expenses you shared in homes with other people are
+          kept for them under the name “Deleted user”, without your name, photo or email. If you
+          created a home with other members, ownership passes to the longest-standing member.
+        </p>
+        <p class="aviso">
+          Deleting your account <strong>does not cancel</strong> a HogarPlus subscription:
+          cancel it in
+          <a href={suscripciones} target="_blank" rel="noopener noreferrer">Google Play → Subscriptions</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 HogarGo</span>
+      <a href={`mailto:${email}`}>Contacto</a>
+      <a href="/privacidad">Privacidad</a>
+      <a href="/">Inicio</a>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --blue: #005cff;
+    --blue-2: #008cff;
+    --ink: #07172f;
+    --muted: #38506d;
+    --line: rgba(0, 92, 255, 0.14);
+    --alert: #b3261e;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+  }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 12% 0%, rgba(53, 182, 255, 0.25), transparent 32%),
+      linear-gradient(180deg, #f5fbff, #eaf6ff 40%, #fff);
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 18px 20px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand img {
+    border-radius: 12px;
+  }
+  .back {
+    color: var(--blue);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .doc {
+    max-width: 860px;
+    margin: 12px auto 40px;
+    padding: clamp(22px, 4vw, 48px);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 70, 170, 0.1);
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .doc h1 {
+    margin: 0 0 6px;
+    color: var(--ink);
+    font-size: clamp(32px, 5vw, 46px);
+    letter-spacing: -0.04em;
+  }
+  .doc h2 {
+    margin: 38px 0 10px;
+    color: var(--ink);
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+  .doc h3 {
+    margin: 22px 0 6px;
+    color: var(--ink);
+    font-size: 18px;
+  }
+  .doc p {
+    margin: 0 0 14px;
+  }
+  .doc ul,
+  .doc ol {
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  .doc li {
+    margin-bottom: 6px;
+  }
+  .doc strong {
+    color: var(--ink);
+  }
+  .doc a {
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .meta {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 22px !important;
+  }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 6px;
+  }
+  .toc a {
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(0, 119, 255, 0.1);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .toc a:hover {
+    background: rgba(0, 119, 255, 0.2);
+  }
+  .pasos {
+    list-style: none;
+    counter-reset: paso;
+    padding-left: 0 !important;
+  }
+  .pasos li {
+    counter-increment: paso;
+    position: relative;
+    padding: 12px 16px 12px 58px;
+    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #f5faff;
+  }
+  .pasos li::before {
+    content: counter(paso);
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    color: #fff;
+    font-weight: 900;
+    font-size: 15px;
+  }
+  .aviso {
+    padding: 14px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(179, 38, 30, 0.25);
+    background: rgba(179, 38, 30, 0.06);
+  }
+  .aviso strong {
+    color: var(--alert);
+  }
+  .idioma {
+    margin-top: 44px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 16px 40px;
+    font-weight: 700;
+    color: #45617f;
+  }
+  .footer a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  :focus-visible {
+    outline: 3px solid var(--blue-2);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
