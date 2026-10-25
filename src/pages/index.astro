@@ -6,6 +6,18 @@ const title = "HogarGo | Tareas, planificador, compras y economía compartida de
 const description =
   "Organiza tareas del hogar, listas de compra, economía compartida y planificación familiar con HogarGo. Descárgala gratis en Google Play.";
 const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
+const manualTemas = [
+  { id: "primeros-pasos", icono: "🚀", nombre: "Primeros pasos" },
+  { id: "inicio", icono: "🏠", nombre: "Pantalla de Inicio" },
+  { id: "tareas", icono: "✅", nombre: "Tareas y puntos" },
+  { id: "planificador", icono: "📅", nombre: "Planificador" },
+  { id: "gastos", icono: "💶", nombre: "Gastos compartidos" },
+  { id: "finanzas", icono: "💼", nombre: "Finanzas personales" },
+  { id: "compra", icono: "🛒", nombre: "Lista de la compra" },
+  { id: "configuracion", icono: "⚙️", nombre: "Configuración" },
+  { id: "hogarplus", icono: "⭐", nombre: "HogarPlus" },
+  { id: "ayuda", icono: "❓", nombre: "Preguntas frecuentes" },
+];
 ---
 
 <!doctype html>
@@ -39,6 +51,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <nav class="nav__links" aria-label="Principal">
         <a href="#funciones">Funciones</a>
         <a href="#tutoriales">Tutoriales</a>
+        <a href="/manual">Manual</a>
       </nav>
       <a class="btn btn--small" href={playStoreUrl} target="_blank" rel="noopener noreferrer">
         Descargar
@@ -205,6 +218,68 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
         </div>
       </section>
 
+      <!-- MANUAL -->
+      <section class="section" id="manual">
+        <div class="section__head reveal">
+          <span class="chip">Manual con infografías</span>
+          <h2>Toda la app, explicada con dibujos</h2>
+          <p>Una guía visual de 12 páginas: léela aquí o descárgala en PDF para tenerla a mano.</p>
+        </div>
+
+        <div class="manual reveal">
+          <!-- Infografía resumen: el balance del mes -->
+          <figure class="manual__info">
+            <svg viewBox="0 0 640 120" width="100%" role="img" aria-label="Balance del mes igual a Mi cuenta más Ingreso estimado menos Gastado, más o menos el saldo del hogar">
+              <g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
+                <rect x="0" y="14" width="118" height="78" rx="14" fill="#005cff" />
+                <text x="59" y="48" font-size="13" font-weight="800" fill="#fff">Balance</text>
+                <text x="59" y="66" font-size="13" font-weight="800" fill="#fff">del mes</text>
+                <text x="134" y="62" font-size="26" font-weight="800" fill="#07172f">=</text>
+                <rect x="150" y="14" width="102" height="78" rx="14" fill="#e3f1ff" />
+                <text x="201" y="44" font-size="20">🏦</text>
+                <text x="201" y="68" font-size="11.5" font-weight="700" fill="#07172f">Mi cuenta</text>
+                <text x="268" y="62" font-size="26" font-weight="800" fill="#1d9e75">+</text>
+                <rect x="284" y="14" width="102" height="78" rx="14" fill="#e3f1ff" />
+                <text x="335" y="44" font-size="20">💼</text>
+                <text x="335" y="68" font-size="11.5" font-weight="700" fill="#07172f">Ingreso est.</text>
+                <text x="402" y="62" font-size="26" font-weight="800" fill="#c0392b">−</text>
+                <rect x="418" y="14" width="96" height="78" rx="14" fill="#fbe4e1" />
+                <text x="466" y="44" font-size="20">🧾</text>
+                <text x="466" y="68" font-size="11.5" font-weight="700" fill="#07172f">Gastado</text>
+                <text x="530" y="62" font-size="24" font-weight="800" fill="#005cff">±</text>
+                <rect x="546" y="14" width="94" height="78" rx="14" fill="#e3f1ff" />
+                <text x="593" y="44" font-size="20">🏠</text>
+                <text x="593" y="64" font-size="10.5" font-weight="700" fill="#07172f">Saldo del</text>
+                <text x="593" y="78" font-size="10.5" font-weight="700" fill="#07172f">hogar</text>
+                <g font-size="9.5" fill="#38506d">
+                  <text x="201" y="110">Se arrastra solo</text>
+                  <text x="335" y="110">Ej.: tu nómina</text>
+                  <text x="466" y="110">Tus gastos</text>
+                  <text x="593" y="110">Te deben / debes</text>
+                </g>
+              </g>
+            </svg>
+            <figcaption>Una de las infografías del manual: así calcula HogarGo tu balance del mes.</figcaption>
+          </figure>
+
+          <div class="manual__temas">
+            {
+              manualTemas.map((t) => (
+                <a class="manual__tema" href={`/manual#${t.id}`}>
+                  <span aria-hidden="true">{t.icono}</span>
+                  {t.nombre}
+                </a>
+              ))
+            }
+          </div>
+
+          <div class="manual__cta">
+            <a class="btn" href="/manual">📖 Ver el manual</a>
+            <a class="btn btn--ghost" href="/manual/HogarGo-Manual.pdf" download>⬇ Descargar PDF</a>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA FINAL -->
       <section class="final">
         <div class="final__box reveal">
@@ -236,6 +311,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
     <footer class="footer">
       <span>© 2026 HogarGo</span>
       <a href="mailto:hogargoapp@gmail.com">Contacto</a>
+      <a href="/manual">Manual</a>
       <a href="/privacidad">Privacidad</a>
       <a href="/eliminar-cuenta">Eliminar cuenta</a>
     </footer>
@@ -858,6 +934,67 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
   .tuto__cta p {
     font-size: 20px;
     font-weight: 800;
+  }
+
+  /* MANUAL */
+  .manual {
+    max-width: 1000px;
+    margin-inline: auto;
+    padding: clamp(20px, 3.5vw, 40px);
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(0, 70, 170, 0.12);
+  }
+  .manual__info {
+    margin: 0 0 28px;
+  }
+  .manual__info figcaption {
+    margin-top: 10px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .manual__temas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+  }
+  .manual__tema {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 2px solid var(--line);
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .manual__tema:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 140, 255, 0.5);
+  }
+  .manual__tema span {
+    font-size: 20px;
+  }
+  .manual__cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .btn--ghost {
+    background: #fff;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    box-shadow: none;
+  }
+  .btn--ghost:hover {
+    box-shadow: 0 14px 30px rgba(0, 92, 255, 0.18);
   }
 
   /* CTA FINAL */
