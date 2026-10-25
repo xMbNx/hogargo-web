@@ -1,5 +1,6 @@
 ---
 import { tutoriales, funciones } from "../data/tutoriales";
+import { pasosInicio, formasDeSumar, comparativa, planes, faqs } from "../data/guia";
 
 const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mbn.hogargo";
 const title = "HogarGo | Tareas, planificador, compras y economía compartida del hogar";
@@ -18,6 +19,15 @@ const manualTemas = [
   { id: "hogarplus", icono: "⭐", nombre: "HogarPlus" },
   { id: "ayuda", icono: "❓", nombre: "Preguntas frecuentes" },
 ];
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+});
 ---
 
 <!doctype html>
@@ -40,6 +50,7 @@ const manualTemas = [
     <script is:inline>
       document.documentElement.classList.add("js");
     </script>
+    <script type="application/ld+json" set:html={faqJsonLd} />
   </head>
 
   <body>
@@ -50,7 +61,9 @@ const manualTemas = [
       </a>
       <nav class="nav__links" aria-label="Principal">
         <a href="#funciones">Funciones</a>
+        <a class="nav__extra" href="#como-funciona">Cómo funciona</a>
         <a href="#tutoriales">Tutoriales</a>
+        <a class="nav__extra" href="#hogarplus">HogarPlus</a>
         <a href="/manual">Manual</a>
       </nav>
       <a class="btn btn--small" href={playStoreUrl} target="_blank" rel="noopener noreferrer">
@@ -91,7 +104,8 @@ const manualTemas = [
           <ul class="trust">
             <li>✔ Hogares compartidos</li>
             <li>✔ Modo «Un usuario»</li>
-            <li>✔ Varios idiomas</li>
+            <li>✔ Modo oscuro</li>
+            <li>✔ 9 idiomas</li>
           </ul>
         </div>
 
@@ -125,6 +139,293 @@ const manualTemas = [
               </article>
             ))
           }
+        </div>
+      </section>
+
+      <!-- CÓMO EMPEZAR -->
+      <section class="section section--tint" id="empezar">
+        <div class="section__head reveal">
+          <span class="chip">Primeros pasos</span>
+          <h2>Tu hogar listo en cuatro pasos</h2>
+          <p>De la descarga a tener a toda la casa organizada, en un par de minutos.</p>
+        </div>
+
+        <ol class="arranque">
+          {
+            pasosInicio.map((p, i) => (
+              <li class="arranque__paso reveal" style={`--d:${i * 90}ms`}>
+                <span class="arranque__circ" aria-hidden="true">
+                  {p.icono}
+                  <b>{i + 1}</b>
+                </span>
+                <h3>{p.titulo}</h3>
+                <p>{p.texto}</p>
+              </li>
+            ))
+          }
+        </ol>
+
+        <h3 class="sub-head reveal">Tres formas de sumar personas</h3>
+        <div class="formas">
+          {
+            formasDeSumar.map((f, i) => (
+              <article class="card reveal" style={`--d:${i * 70}ms`}>
+                <span class="card__icon" aria-hidden="true">{f.icono}</span>
+                <h3>{f.titulo}</h3>
+                <p>{f.texto}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- CÓMO FUNCIONA -->
+      <section class="section" id="como-funciona">
+        <div class="section__head reveal">
+          <span class="chip">Cómo funciona</span>
+          <h2>Cada parte de la casa, explicada</h2>
+          <p>Las mismas infografías del manual, para que veas de un vistazo qué hace HogarGo por ti.</p>
+        </div>
+
+        <div class="feats">
+          <!-- Tareas y puntos -->
+          <article class="feat reveal" style="--c:#7f77dd;--cc:#ecebfa">
+            <div class="feat__media">
+              <svg viewBox="0 0 340 330" role="img" aria-label="Ciclo de una tarea: crear, asignar, marcar como hecha, sumar puntos y subir en el ranking">
+                <defs><marker id="fl-tareas" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#7f77dd" /></marker></defs>
+                <circle cx="170" cy="165" r="112" fill="none" stroke="#c9c5f1" stroke-width="3" stroke-dasharray="6 6" />
+                <g stroke="#7f77dd" stroke-width="3" fill="none" marker-end="url(#fl-tareas)">
+                  <path d="M210 60 A112 112 0 0 1 270 120" />
+                  <path d="M282 205 A112 112 0 0 1 225 262" />
+                  <path d="M120 270 A112 112 0 0 1 64 214" />
+                  <path d="M60 120 A112 112 0 0 1 125 60" />
+                </g>
+                <g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
+                  <circle cx="170" cy="165" r="56" fill="#7f77dd" />
+                  <text x="170" y="160" font-size="26">🏆</text>
+                  <text x="170" y="186" font-size="13" font-weight="800" fill="#fff">Ranking</text>
+                  <circle cx="170" cy="50" r="34" fill="#ecebfa" stroke="#7f77dd" stroke-width="2.5" />
+                  <text x="170" y="50" font-size="20">📝</text><text x="170" y="69" font-size="11" font-weight="700" fill="#07172f">Crear</text>
+                  <circle cx="288" cy="165" r="34" fill="#ecebfa" stroke="#7f77dd" stroke-width="2.5" />
+                  <text x="288" y="165" font-size="20">👥</text><text x="288" y="184" font-size="11" font-weight="700" fill="#07172f">Asignar</text>
+                  <circle cx="170" cy="282" r="34" fill="#ecebfa" stroke="#7f77dd" stroke-width="2.5" />
+                  <text x="170" y="282" font-size="20">✅</text><text x="170" y="301" font-size="11" font-weight="700" fill="#07172f">Marcar</text>
+                  <circle cx="52" cy="165" r="34" fill="#ecebfa" stroke="#7f77dd" stroke-width="2.5" />
+                  <text x="52" y="165" font-size="20">⭐</text><text x="52" y="184" font-size="11" font-weight="700" fill="#07172f">+ Puntos</text>
+                </g>
+              </svg>
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Tareas y puntos</span>
+              <h3>Repartir tareas deja de ser una discusión</h3>
+              <ol class="feat__list">
+                <li><strong>Crea la tarea</strong> con categoría y puntos: cuanto más pesada, más puntos.</li>
+                <li><strong>Asígnala</strong> a una o varias personas, o prográmala.</li>
+                <li><strong>Márcala como hecha</strong> en un toque.</li>
+                <li><strong>Suma puntos</strong> al ranking semanal y mensual del hogar.</li>
+              </ol>
+              <ul class="cats" aria-label="Categorías de tareas">
+                <li style="--k:#1d9e75">🍳 Cocina</li>
+                <li style="--k:#7f77dd">🧽 Limpieza</li>
+                <li style="--k:#d85a30">👕 Ropa</li>
+                <li style="--k:#ba7517">📦 Otros</li>
+              </ul>
+              <a class="feat__more" href="/manual#tareas">Ver en el manual →</a>
+            </div>
+          </article>
+
+          <!-- Planificador -->
+          <article class="feat feat--rev reveal" style="--c:#7f77dd;--cc:#ecebfa">
+            <div class="feat__media">
+              <svg viewBox="0 0 400 250" role="img" aria-label="Planificador en tres pasos: qué, quién y cuándo, con modos de repetición semanal, selección de días, todo el mes y todo el año">
+                <g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
+                  <g stroke="#7f77dd" stroke-width="2" stroke-dasharray="5 5" opacity=".6">
+                    <line x1="102" y1="46" x2="168" y2="46" /><line x1="232" y1="46" x2="298" y2="46" />
+                  </g>
+                  <g fill="#ecebfa" stroke="#7f77dd" stroke-width="2.5">
+                    <circle cx="70" cy="46" r="30" /><circle cx="200" cy="46" r="30" /><circle cx="330" cy="46" r="30" />
+                  </g>
+                  <g font-size="24"><text x="70" y="55">📋</text><text x="200" y="55">🙋</text><text x="330" y="55">📅</text></g>
+                  <g font-size="13" font-weight="800" fill="#07172f"><text x="70" y="96">Qué</text><text x="200" y="96">Quién</text><text x="330" y="96">Cuándo</text></g>
+                  <g font-size="10.5" fill="#38506d"><text x="70" y="112">Tareas</text><text x="200" y="112">Usuarios</text><text x="330" y="112">Días</text></g>
+                  <g font-size="11" font-weight="700" fill="#38506d">
+                    <text x="50" y="144">L</text><text x="100" y="144">M</text><text x="150" y="144">X</text><text x="200" y="144">J</text><text x="250" y="144">V</text><text x="300" y="144">S</text><text x="350" y="144">D</text>
+                  </g>
+                  <g fill="#ecebfa">
+                    <rect x="82" y="152" width="36" height="30" rx="8" /><rect x="182" y="152" width="36" height="30" rx="8" /><rect x="282" y="152" width="36" height="30" rx="8" /><rect x="332" y="152" width="36" height="30" rx="8" />
+                  </g>
+                  <g fill="#7f77dd">
+                    <rect x="32" y="152" width="36" height="30" rx="8" /><rect x="132" y="152" width="36" height="30" rx="8" /><rect x="232" y="152" width="36" height="30" rx="8" />
+                  </g>
+                  <g fill="#fff" font-size="14" font-weight="800"><text x="50" y="172">✓</text><text x="150" y="172">✓</text><text x="250" y="172">✓</text></g>
+                  <g font-size="11" font-weight="700">
+                    <rect x="20" y="206" width="70" height="28" rx="14" fill="#7f77dd" /><text x="55" y="224" fill="#fff">Semanal</text>
+                    <rect x="98" y="206" width="78" height="28" rx="14" fill="#ecebfa" /><text x="137" y="224" fill="#5c54b8">Selección</text>
+                    <rect x="184" y="206" width="88" height="28" rx="14" fill="#ecebfa" /><text x="228" y="224" fill="#5c54b8">Todo el mes</text>
+                    <rect x="280" y="206" width="100" height="28" rx="14" fill="#f3ece3" stroke="#c8a97e" /><text x="330" y="224" fill="#9b7a52">Todo el año ⭐</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Planificador e historial</span>
+              <h3>Qué, quién y cuándo, en tres toques</h3>
+              <p>Elige las tareas, las personas y los días. Repite la planificación cada semana, en días sueltos, el mes entero o, con HogarPlus, el año completo.</p>
+              <ul class="feat__checks">
+                <li>Calendario de asignaciones de cada persona.</li>
+                <li>Historial por día y persona, con filtros por usuario, tipo o mes.</li>
+                <li>Toca un registro para editarlo o deslízalo para borrarlo.</li>
+              </ul>
+              <a class="feat__more" href="/manual#planificador">Ver en el manual →</a>
+            </div>
+          </article>
+
+          <!-- Gastos compartidos -->
+          <article class="feat reveal" style="--c:#1d9e75;--cc:#e0f3ec">
+            <div class="feat__media">
+              <svg viewBox="0 0 400 300" role="img" aria-label="Ejemplo: Ana paga 60 euros de compra a medias y Juan paga 20 euros de internet a medias; resultado, Juan debe 20 euros a Ana">
+                <defs><marker id="fl-gastos" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1d9e75" /></marker></defs>
+                <g font-family="Inter, system-ui, sans-serif">
+                  <rect x="0" y="0" width="190" height="76" rx="14" fill="#f5faff" stroke="#d3e3f5" />
+                  <text x="14" y="26" font-size="12.5" font-weight="800" fill="#07172f">🛒 Compra · 60 €</text>
+                  <text x="14" y="46" font-size="11" fill="#38506d">Paga Ana · a medias</text>
+                  <text x="14" y="64" font-size="11" font-weight="700" fill="#1d9e75">Juan le debe 30 €</text>
+                  <rect x="210" y="0" width="190" height="76" rx="14" fill="#f5faff" stroke="#d3e3f5" />
+                  <text x="224" y="26" font-size="12.5" font-weight="800" fill="#07172f">📶 Internet · 20 €</text>
+                  <text x="224" y="46" font-size="11" fill="#38506d">Paga Juan · a medias</text>
+                  <text x="224" y="64" font-size="11" font-weight="700" fill="#c0392b">Ana le debe 10 €</text>
+                  <g stroke="#1d9e75" stroke-width="2.5" fill="none" marker-end="url(#fl-gastos)">
+                    <path d="M95 78 C95 108 150 104 170 122" />
+                    <path d="M305 78 C305 108 250 104 230 122" />
+                    <path d="M200 182 V204" />
+                  </g>
+                  <rect x="140" y="124" width="120" height="56" rx="14" fill="#1d9e75" />
+                  <text x="200" y="149" font-size="18" text-anchor="middle">⚖️</text>
+                  <text x="200" y="170" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">Saldos</text>
+                  <rect x="90" y="210" width="220" height="86" rx="16" fill="#e0f3ec" stroke="#1d9e75" stroke-width="2" />
+                  <text x="200" y="232" font-size="11" fill="#38506d" text-anchor="middle">Resultado</text>
+                  <text x="200" y="256" font-size="16" font-weight="800" fill="#07172f" text-anchor="middle">Juan → Ana</text>
+                  <text x="200" y="285" font-size="24" font-weight="800" fill="#1d9e75" text-anchor="middle">20 €</text>
+                </g>
+              </svg>
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Gastos compartidos</span>
+              <h3>Cuentas claras, sin hojas de cálculo</h3>
+              <ol class="feat__list">
+                <li><strong>Apunta</strong> una compra, un pago o un ingreso.</li>
+                <li><strong>Elige quién paga</strong> y entre quién se reparte.</li>
+                <li><strong>Mira los saldos:</strong> HogarGo calcula quién debe a quién.</li>
+                <li><strong>Liquida</strong> el balance del mes y empezad de cero.</li>
+              </ol>
+              <p class="feat__note">En euros y otras monedas de la UE, además de dólares.</p>
+              <a class="feat__more" href="/manual#gastos">Ver en el manual →</a>
+            </div>
+          </article>
+
+          <!-- Finanzas personales -->
+          <article class="feat feat--rev reveal" style="--c:#1d9e75;--cc:#e0f3ec">
+            <div class="feat__media">
+              <svg viewBox="0 0 400 330" role="img" aria-label="Balance del mes: Mi cuenta 1.000 euros más ingreso estimado 1.800 menos gastado 1.250 menos saldo del hogar 102,83 igual a 1.447,17 euros. Presupuestos: comida 45 por ciento, ocio 80 por ciento, ropa 112 por ciento">
+                <g font-family="Inter, system-ui, sans-serif">
+                  <rect x="0" y="0" width="400" height="196" rx="16" fill="#f5faff" stroke="#d3e3f5" />
+                  <g font-size="13" fill="#07172f">
+                    <text x="20" y="34">🏦  Mi cuenta</text>
+                    <text x="20" y="64">💼  + Ingreso estimado</text>
+                    <text x="20" y="94">🧾  − Gastado</text>
+                    <text x="20" y="124">🏠  ± Saldo del hogar</text>
+                  </g>
+                  <g font-size="13" font-weight="700" text-anchor="end">
+                    <text x="380" y="34" fill="#07172f">1.000,00 €</text>
+                    <text x="380" y="64" fill="#1d9e75">+1.800,00 €</text>
+                    <text x="380" y="94" fill="#c0392b">−1.250,00 €</text>
+                    <text x="380" y="124" fill="#c0392b">−102,83 €</text>
+                  </g>
+                  <line x1="20" y1="142" x2="380" y2="142" stroke="#07172f" stroke-width="1.5" />
+                  <text x="20" y="176" font-size="15" font-weight="800" fill="#07172f">Balance del mes</text>
+                  <text x="380" y="177" font-size="20" font-weight="800" fill="#1d9e75" text-anchor="end">1.447,17 €</text>
+                  <g fill="none" stroke-width="10" stroke-linecap="round">
+                    <circle cx="67" cy="256" r="34" stroke="#e0f3ec" />
+                    <circle cx="67" cy="256" r="34" stroke="#1d9e75" stroke-dasharray="96 214" transform="rotate(-90 67 256)" />
+                    <circle cx="200" cy="256" r="34" stroke="#f6ecdc" />
+                    <circle cx="200" cy="256" r="34" stroke="#ba7517" stroke-dasharray="171 214" transform="rotate(-90 200 256)" />
+                    <circle cx="333" cy="256" r="34" stroke="#c0392b" />
+                  </g>
+                  <g text-anchor="middle" font-weight="800" font-size="14">
+                    <text x="67" y="261" fill="#07172f">45%</text>
+                    <text x="200" y="261" fill="#07172f">80%</text>
+                    <text x="333" y="261" fill="#c0392b">112%</text>
+                  </g>
+                  <g text-anchor="middle" font-size="11">
+                    <text x="67" y="314" fill="#38506d">Comida</text>
+                    <text x="200" y="314" fill="#38506d">Ocio</text>
+                    <text x="333" y="314" fill="#c0392b" font-weight="700">Ropa · ¡te pasas!</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Finanzas personales</span>
+              <h3>Tu dinero, mes a mes</h3>
+              <p><strong>Balance del mes = Mi cuenta + Ingreso est. − Gastado ± lo que te deben o debes en el hogar.</strong></p>
+              <ul class="feat__checks">
+                <li><strong>Mi cuenta</strong> pasa sola de un mes al siguiente; corrígela con el lápiz si no cuadra.</li>
+                <li><strong>Ingreso estimado</strong> se repite cada mes hasta que lo cambies.</li>
+                <li><strong>Presupuestos por categoría:</strong> el anillo se pone en rojo si te pasas.</li>
+                <li><strong>Metas de ahorro</strong> a la vista desde el Inicio.</li>
+              </ul>
+              <a class="feat__more" href="/manual#finanzas">Ver en el manual →</a>
+            </div>
+          </article>
+
+          <!-- Lista de la compra -->
+          <article class="feat reveal" style="--c:#d85a30;--cc:#fbe9e1">
+            <div class="feat__media">
+              <svg viewBox="0 0 400 290" role="img" aria-label="Lista de la compra compartida: productos agrupados por categoría y los que ya están en el carro, sincronizada entre Ana y Juan">
+                <g font-family="Inter, system-ui, sans-serif">
+                  <g stroke="#d85a30" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity=".6">
+                    <path d="M46 112 H70" /><path d="M330 196 H354" />
+                  </g>
+                  <circle cx="26" cy="112" r="22" fill="#fbe9e1" /><text x="26" y="120" font-size="22" text-anchor="middle">👩</text>
+                  <circle cx="374" cy="196" r="22" fill="#fbe9e1" /><text x="374" y="204" font-size="22" text-anchor="middle">👨</text>
+                  <rect x="70" y="4" width="260" height="280" rx="18" fill="#fff" stroke="#f3cdbd" stroke-width="2" />
+                  <text x="90" y="36" font-size="15" font-weight="800" fill="#07172f">🛒 Súper</text>
+                  <text x="310" y="36" font-size="11" font-weight="700" fill="#d85a30" text-anchor="end">2 de 5</text>
+                  <rect x="90" y="48" width="220" height="6" rx="3" fill="#fbe9e1" />
+                  <rect x="90" y="48" width="88" height="6" rx="3" fill="#d85a30" />
+                  <g font-size="10" font-weight="800" fill="#38506d" letter-spacing=".05em">
+                    <text x="90" y="80">FRESCOS</text><text x="90" y="156">LIMPIEZA</text><text x="90" y="210">EN EL CARRO</text>
+                  </g>
+                  <g fill="none" stroke="#9aa8bf" stroke-width="2">
+                    <rect x="90" y="90" width="14" height="14" rx="4" /><rect x="90" y="116" width="14" height="14" rx="4" /><rect x="90" y="166" width="14" height="14" rx="4" />
+                  </g>
+                  <g font-size="13" fill="#07172f">
+                    <text x="114" y="102">Tomates</text><text x="114" y="128">Pan</text><text x="114" y="178">Detergente</text>
+                  </g>
+                  <g fill="#d85a30">
+                    <rect x="90" y="220" width="14" height="14" rx="4" /><rect x="90" y="246" width="14" height="14" rx="4" />
+                  </g>
+                  <g stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round">
+                    <path d="M93 227 l3 3 l6 -6" /><path d="M93 253 l3 3 l6 -6" />
+                  </g>
+                  <g font-size="13" fill="#9aa8bf" text-decoration="line-through">
+                    <text x="114" y="232">Leche</text><text x="114" y="258">Aceite de oliva</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Lista de la compra</span>
+              <h3>Que no se te olvide nada</h3>
+              <ol class="feat__list">
+                <li><strong>Crea una lista:</strong> «Súper», «Fiesta del sábado»…</li>
+                <li><strong>Añade productos</strong> de tu catálogo; se agrupan por categoría.</li>
+                <li><strong>Marca</strong> cada producto según lo metes en el carro.</li>
+                <li><strong>Todos al día:</strong> los demás ven al momento lo que falta.</li>
+              </ol>
+              <a class="feat__more" href="/manual#compra">Ver en el manual →</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -211,6 +512,7 @@ const manualTemas = [
 
           <div class="tuto__cta">
             <p>¿Lo has visto claro? Pruébalo tú mismo.</p>
+            <a class="tuto__manual" href="/manual">¿Quieres más detalle? Consulta el manual completo →</a>
             <a class="btn" href={playStoreUrl} target="_blank" rel="noopener noreferrer">
               📲 Descargar en Google Play
             </a>
@@ -218,65 +520,125 @@ const manualTemas = [
         </div>
       </section>
 
-      <!-- MANUAL -->
-      <section class="section" id="manual">
+      <!-- HOGARPLUS -->
+      <section class="section section--tint" id="hogarplus">
         <div class="section__head reveal">
-          <span class="chip">Manual con infografías</span>
-          <h2>Toda la app, explicada con dibujos</h2>
-          <p>Una guía visual de 12 páginas: léela aquí o descárgala en PDF para tenerla a mano.</p>
+          <span class="chip chip--plus">⭐ HogarPlus</span>
+          <h2>Una suscripción para toda la casa</h2>
+          <p>Si un miembro se hace Plus, lo disfrutan todos los del hogar. Y el plan gratuito ya incluye lo esencial.</p>
         </div>
 
-        <div class="manual reveal">
-          <!-- Infografía resumen: el balance del mes -->
-          <figure class="manual__info">
-            <svg viewBox="0 0 640 120" width="100%" role="img" aria-label="Balance del mes igual a Mi cuenta más Ingreso estimado menos Gastado, más o menos el saldo del hogar">
+        <div class="plus reveal">
+          <figure class="plus__info">
+            <svg viewBox="0 0 400 150" role="img" aria-label="Si un miembro se suscribe, HogarPlus se activa para todo el hogar y lo disfrutan todos">
+              <defs>
+                <linearGradient id="g-plus" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9be96" /><stop offset="1" stop-color="#9b7a52" /></linearGradient>
+                <marker id="fl-plus" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#9b7a52" /></marker>
+              </defs>
               <g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
-                <rect x="0" y="14" width="118" height="78" rx="14" fill="#005cff" />
-                <text x="59" y="48" font-size="13" font-weight="800" fill="#fff">Balance</text>
-                <text x="59" y="66" font-size="13" font-weight="800" fill="#fff">del mes</text>
-                <text x="134" y="62" font-size="26" font-weight="800" fill="#07172f">=</text>
-                <rect x="150" y="14" width="102" height="78" rx="14" fill="#e3f1ff" />
-                <text x="201" y="44" font-size="20">🏦</text>
-                <text x="201" y="68" font-size="11.5" font-weight="700" fill="#07172f">Mi cuenta</text>
-                <text x="268" y="62" font-size="26" font-weight="800" fill="#1d9e75">+</text>
-                <rect x="284" y="14" width="102" height="78" rx="14" fill="#e3f1ff" />
-                <text x="335" y="44" font-size="20">💼</text>
-                <text x="335" y="68" font-size="11.5" font-weight="700" fill="#07172f">Ingreso est.</text>
-                <text x="402" y="62" font-size="26" font-weight="800" fill="#c0392b">−</text>
-                <rect x="418" y="14" width="96" height="78" rx="14" fill="#fbe4e1" />
-                <text x="466" y="44" font-size="20">🧾</text>
-                <text x="466" y="68" font-size="11.5" font-weight="700" fill="#07172f">Gastado</text>
-                <text x="530" y="62" font-size="24" font-weight="800" fill="#005cff">±</text>
-                <rect x="546" y="14" width="94" height="78" rx="14" fill="#e3f1ff" />
-                <text x="593" y="44" font-size="20">🏠</text>
-                <text x="593" y="64" font-size="10.5" font-weight="700" fill="#07172f">Saldo del</text>
-                <text x="593" y="78" font-size="10.5" font-weight="700" fill="#07172f">hogar</text>
-                <g font-size="9.5" fill="#38506d">
-                  <text x="201" y="110">Se arrastra solo</text>
-                  <text x="335" y="110">Ej.: tu nómina</text>
-                  <text x="466" y="110">Tus gastos</text>
-                  <text x="593" y="110">Te deben / debes</text>
+                <circle cx="50" cy="60" r="34" fill="#f3ece3" stroke="#c8a97e" stroke-width="2" />
+                <text x="50" y="70" font-size="28">🙋</text>
+                <text x="50" y="120" font-size="11" font-weight="700" fill="#07172f">Uno se suscribe</text>
+                <path d="M90 60 H126" stroke="#9b7a52" stroke-width="3" marker-end="url(#fl-plus)" />
+                <rect x="134" y="28" width="132" height="64" rx="16" fill="url(#g-plus)" />
+                <text x="200" y="56" font-size="15" font-weight="800" fill="#fff">⭐ HogarPlus</text>
+                <text x="200" y="77" font-size="10.5" fill="#fff">para todo el hogar</text>
+                <path d="M272 60 H300" stroke="#9b7a52" stroke-width="3" marker-end="url(#fl-plus)" />
+                <g font-size="20">
+                  <circle cx="328" cy="38" r="19" fill="#f3ece3" /><text x="328" y="45">👩</text>
+                  <circle cx="372" cy="38" r="19" fill="#f3ece3" /><text x="372" y="45">👨</text>
+                  <circle cx="328" cy="82" r="19" fill="#f3ece3" /><text x="328" y="89">🧒</text>
+                  <circle cx="372" cy="82" r="19" fill="#f3ece3" /><text x="372" y="89">👵</text>
                 </g>
+                <text x="350" y="124" font-size="11" font-weight="700" fill="#07172f">Todos lo disfrutan</text>
               </g>
             </svg>
-            <figcaption>Una de las infografías del manual: así calcula HogarGo tu balance del mes.</figcaption>
           </figure>
 
-          <div class="manual__temas">
+          <div class="comp-wrap">
+            <table class="comp">
+              <thead>
+                <tr><th scope="col">Función</th><th scope="col" class="comp__g">Gratis</th><th scope="col" class="comp__p">⭐ Plus</th></tr>
+              </thead>
+              <tbody>
+                {
+                  comparativa.map((c) => (
+                    <tr>
+                      <th scope="row">{c.funcion}</th>
+                      <td class:list={["comp__g", { si: c.gratis === "✓", no: c.gratis === "—" }]}>{c.gratis}</td>
+                      <td class:list={["comp__p", { si: c.plus === "✓" }]}>{c.plus}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+
+          <div class="planes">
             {
-              manualTemas.map((t) => (
-                <a class="manual__tema" href={`/manual#${t.id}`}>
-                  <span aria-hidden="true">{t.icono}</span>
-                  {t.nombre}
-                </a>
+              planes.map((p) => (
+                <div class:list={["plan", { "plan--top": p.destacado }]}>
+                  <strong>{p.nombre}</strong>
+                  <span>{p.texto}</span>
+                </div>
               ))
             }
           </div>
+          <p class="plus__nota">
+            Los precios aparecen en la app según tu país y las compras se gestionan con Google Play.
+            Si el plan termina, no pierdes tus datos: solo se bloquean las funciones Plus.
+          </p>
+        </div>
+      </section>
 
-          <div class="manual__cta">
-            <a class="btn" href="/manual">📖 Ver el manual</a>
-            <a class="btn btn--ghost" href="/manual/HogarGo-Manual.pdf" download>⬇ Descargar PDF</a>
+      <!-- MANUAL -->
+      <section class="section" id="manual">
+        <div class="manual reveal">
+          <a class="manual__portada" href="/manual" aria-label="Abrir el manual de HogarGo">
+            <img src="/logoandroid.png" alt="" width="56" height="56" />
+            <span class="manual__tipo">Manual de usuario</span>
+            <strong>HogarGo</strong>
+            <span class="manual__meta">12 páginas · Infografías · PDF</span>
+            <img class="manual__movil" src="/manual/img/01_inicio.jpg" alt="" loading="lazy" decoding="async" />
+          </a>
+          <div class="manual__cuerpo">
+            <span class="chip">Manual con infografías</span>
+            <h2>Toda la app, explicada con dibujos</h2>
+            <p class="manual__lead">Léelo en la web o descárgalo en PDF para tenerlo a mano. Salta directo al tema que te interese:</p>
+            <div class="manual__temas">
+              {
+                manualTemas.map((t) => (
+                  <a class="manual__tema" href={`/manual#${t.id}`}>
+                    <span aria-hidden="true">{t.icono}</span>
+                    {t.nombre}
+                  </a>
+                ))
+              }
+            </div>
+            <div class="manual__cta">
+              <a class="btn" href="/manual">📖 Ver el manual</a>
+              <a class="btn btn--ghost" href="/manual/HogarGo-Manual.pdf" download>⬇ Descargar PDF</a>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <!-- PREGUNTAS FRECUENTES -->
+      <section class="section section--tint" id="faq">
+        <div class="section__head reveal">
+          <span class="chip">Preguntas frecuentes</span>
+          <h2>¿Tienes dudas?</h2>
+          <p>Las respuestas a lo que más nos preguntáis. ¿No está la tuya? Escríbenos a <a href="mailto:hogargoapp@gmail.com">hogargoapp@gmail.com</a>.</p>
+        </div>
+        <div class="faq reveal">
+          {
+            faqs.map((f) => (
+              <details class="faq__item">
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))
+          }
         </div>
       </section>
 
@@ -936,9 +1298,326 @@ const manualTemas = [
     font-weight: 800;
   }
 
+  /* CÓMO EMPEZAR */
+  .arranque {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  .arranque__paso {
+    position: relative;
+    text-align: center;
+  }
+  .arranque__paso:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: calc(50% + 50px);
+    right: calc(-50% + 30px);
+    border-top: 3px dashed rgba(0, 92, 255, 0.3);
+  }
+  .arranque__circ {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--blue);
+    font-size: 36px;
+    box-shadow: 0 14px 30px rgba(0, 92, 255, 0.18);
+  }
+  .arranque__circ b {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    font-size: 15px;
+  }
+  .arranque__paso h3 {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .arranque__paso p {
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 240px;
+    margin-inline: auto;
+  }
+  .sub-head {
+    max-width: 1100px;
+    margin: clamp(40px, 6vw, 64px) auto 20px;
+    font-size: clamp(22px, 2.6vw, 28px);
+    letter-spacing: -0.03em;
+    text-align: center;
+  }
+  .formas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+
+  /* CÓMO FUNCIONA */
+  .feats {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 7vw, 88px);
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  .feat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(24px, 5vw, 64px);
+  }
+  .feat--rev .feat__media {
+    order: 2;
+  }
+  .feat__media {
+    padding: clamp(18px, 3vw, 32px);
+    border-radius: 28px;
+    background: linear-gradient(160deg, var(--cc), #fff);
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(0, 70, 170, 0.1);
+  }
+  .feat__media svg {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    margin-inline: auto;
+  }
+  .feat__tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--cc);
+    color: var(--c);
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .feat__text h3 {
+    font-size: clamp(26px, 3.2vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+  .feat__text p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .feat__text strong {
+    color: var(--ink);
+  }
+  .feat__list,
+  .feat__checks {
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .feat__list {
+    counter-reset: paso;
+  }
+  .feat__list li,
+  .feat__checks li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 12px;
+  }
+  .feat__list li::before {
+    counter-increment: paso;
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: -1px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--c);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .feat__checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 0;
+    color: var(--c);
+    font-weight: 900;
+  }
+  .feat__note {
+    font-size: 15px !important;
+  }
+  .cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+  }
+  .cats li {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 2px solid color-mix(in srgb, var(--k) 35%, transparent);
+    background: color-mix(in srgb, var(--k) 10%, #fff);
+    color: var(--k);
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .feat__more {
+    color: var(--c);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .feat__more:hover {
+    text-decoration: underline;
+  }
+
+  .tuto__manual {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .tuto__manual:hover {
+    text-decoration: underline;
+  }
+
+  /* HOGARPLUS */
+  .chip--plus {
+    background: #f3ece3;
+    color: #8a6a43;
+  }
+  .plus {
+    max-width: 900px;
+    margin-inline: auto;
+  }
+  .plus__info {
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+  .plus__info svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .comp-wrap {
+    overflow-x: auto;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(0, 70, 170, 0.1);
+  }
+  .comp {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  .comp th,
+  .comp td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  .comp tbody tr:last-child th,
+  .comp tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .comp tbody th {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .comp thead th {
+    font-size: 15px;
+    font-weight: 900;
+  }
+  .comp__g,
+  .comp__p {
+    width: 130px;
+    text-align: center !important;
+    font-weight: 800;
+  }
+  .comp__p {
+    background: #faf5ee;
+    color: #6f5638;
+  }
+  .comp thead .comp__p {
+    color: #9b7a52;
+  }
+  .comp .si {
+    color: #1d9e75;
+  }
+  .comp .no {
+    color: #a3acbb;
+  }
+  .planes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .plan {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px;
+    border-radius: 18px;
+    background: #fff;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+  .plan strong {
+    font-size: 18px;
+  }
+  .plan span {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .plan--top {
+    background: #faf5ee;
+    border-color: #c8a97e;
+  }
+  .plus__nota {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
   /* MANUAL */
   .manual {
-    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: center;
+    gap: clamp(24px, 4vw, 48px);
+    max-width: 1100px;
     margin-inline: auto;
     padding: clamp(20px, 3.5vw, 40px);
     border-radius: 28px;
@@ -946,25 +1625,73 @@ const manualTemas = [
     border: 1px solid var(--line);
     box-shadow: 0 24px 60px rgba(0, 70, 170, 0.12);
   }
-  .manual__info {
-    margin: 0 0 28px;
+  .manual__portada {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    aspect-ratio: 210 / 297;
+    padding: 26px 24px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: linear-gradient(160deg, #6a89bd, #4f6fa3 40%, #2c4266);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 22px 46px rgba(31, 46, 71, 0.35);
+    transform: rotate(-2deg);
+    transition: transform 0.3s;
   }
-  .manual__info figcaption {
-    margin-top: 10px;
-    text-align: center;
+  .manual__portada:hover {
+    transform: rotate(0) scale(1.02);
+  }
+  .manual__portada > img:first-child {
+    border-radius: 14px;
+    margin-bottom: 18px;
+  }
+  .manual__tipo {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .manual__portada strong {
+    font-size: 40px;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+  .manual__meta {
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: 0.85;
+  }
+  .manual__movil {
+    position: absolute;
+    right: -14px;
+    top: 60%;
+    width: 46%;
+    border-radius: 12px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  }
+  .manual__cuerpo .chip {
+    margin-bottom: 14px;
+  }
+  .manual__lead {
     color: var(--muted);
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
   .manual__temas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     gap: 10px;
   }
   .manual__tema {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 14px;
+    padding: 11px 14px;
     border-radius: 14px;
     border: 2px solid var(--line);
     color: var(--ink);
@@ -983,9 +1710,8 @@ const manualTemas = [
   .manual__cta {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 14px;
-    margin-top: 28px;
+    margin-top: 24px;
   }
   .btn--ghost {
     background: #fff;
@@ -995,6 +1721,110 @@ const manualTemas = [
   }
   .btn--ghost:hover {
     box-shadow: 0 14px 30px rgba(0, 92, 255, 0.18);
+  }
+
+  /* PREGUNTAS FRECUENTES */
+  .section__head a {
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .faq {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 820px;
+    margin-inline: auto;
+  }
+  .faq__item {
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(0, 70, 170, 0.06);
+  }
+  .faq__item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    font-weight: 800;
+    font-size: 17px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq__item summary::after {
+    content: "+";
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e3f1ff;
+    color: var(--blue);
+    font-size: 20px;
+    transition: transform 0.25s;
+  }
+  .faq__item[open] summary::after {
+    transform: rotate(45deg);
+  }
+  .faq__item p {
+    padding: 0 22px 20px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1100px) {
+    .nav__extra {
+      display: none;
+    }
+  }
+  @media (max-width: 980px) {
+    .arranque {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 36px;
+    }
+    .arranque__paso::after {
+      display: none;
+    }
+    .feat {
+      grid-template-columns: 1fr;
+    }
+    .feat--rev .feat__media {
+      order: 0;
+    }
+    .planes {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .manual {
+      grid-template-columns: 1fr;
+    }
+    .manual__portada {
+      width: min(100%, 260px);
+      margin-inline: auto;
+    }
+  }
+  @media (max-width: 640px) {
+    .arranque {
+      grid-template-columns: 1fr;
+    }
+    .comp th,
+    .comp td {
+      padding: 12px 12px;
+      font-size: 14px;
+    }
+    .comp__g,
+    .comp__p {
+      width: 76px;
+    }
+    .faq__item summary {
+      font-size: 16px;
+      padding: 16px 18px;
+    }
   }
 
   /* CTA FINAL */

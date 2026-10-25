@@ -137,10 +137,12 @@ export const tutoriales: Tutorial[] = [
 ];
 
 export const funciones = [
-  { icono: "✅", titulo: "Tareas del hogar", texto: "Reparte, marca y puntúa las tareas de cada persona. Ranking incluido." },
-  { icono: "🗓️", titulo: "Planificador", texto: "Programa tareas recurrentes por días, meses o años." },
-  { icono: "🛒", titulo: "Lista de la compra", texto: "Listas compartidas: tacha lo que ya está en el carrito." },
-  { icono: "💶", titulo: "Economía compartida", texto: "Gastos, saldos y quién debe a quién, sin hojas de cálculo." },
-  { icono: "🎯", titulo: "Finanzas personales", texto: "Tu cuenta, ingresos y presupuesto mensual por categorías." },
-  { icono: "👨‍👩‍👧", titulo: "Hogar compartido", texto: "Invita a tu familia o compañeros, o úsala tú solo en modo «Un usuario»." },
+  { icono: "✅", titulo: "Tareas y puntos", texto: "Crea tareas por categoría, asígnalas y márcalas en un toque. Cada una suma puntos." },
+  { icono: "🏆", titulo: "Ranking y motivación", texto: "Ranking semanal y mensual con el % del reparto de cada uno, y avisos si alguien se queda atrás." },
+  { icono: "🗓️", titulo: "Planificador", texto: "Qué, quién y cuándo: programa tareas por semanas, días sueltos, el mes entero o el año." },
+  { icono: "💶", titulo: "Gastos compartidos", texto: "Quién paga y entre quién se reparte. HogarGo calcula quién debe a quién para liquidar." },
+  { icono: "💼", titulo: "Finanzas personales", texto: "Tu cuenta mes a mes, ingreso estimado, presupuestos por categoría y metas de ahorro." },
+  { icono: "🛒", titulo: "Lista de la compra", texto: "Listas compartidas en tiempo real, agrupadas por categoría y con tu propio catálogo." },
+  { icono: "🏠", titulo: "Inicio a tu medida", texto: "Elige qué tarjetas ver y en qué orden. Con modo oscuro y en 9 idiomas." },
+  { icono: "👨‍👩‍👧", titulo: "Hogar compartido", texto: "Invita con un código, añade usuarios sin cuenta o úsala tú solo en modo «Un usuario»." },
 ];
