@@ -1171,16 +1171,21 @@ const faqJsonLd = JSON.stringify({
       transform: translateX(18px);
     }
   }
+  /* Las capturas de la app tienen proporciones muy distintas: el marco tiene
+     alto fijo para que el carrusel no salte al cambiar de paso. */
   .step__shot {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 484px;
     padding: 12px;
     border-radius: 28px;
     background: linear-gradient(160deg, #dcecff, #f3f9ff);
   }
   .step__shot img {
     display: block;
-    max-height: 460px;
+    max-height: 100%;
+    max-width: 100%;
     width: auto;
     border-radius: 18px;
     box-shadow: 0 16px 38px rgba(0, 40, 120, 0.25);
@@ -1927,8 +1932,11 @@ const faqJsonLd = JSON.stringify({
     .tab__sub {
       display: none;
     }
+    .step__shot {
+      height: 404px;
+    }
     .step__shot img {
-      max-height: 380px;
+      max-height: 100%;
     }
     .sticky-cta {
       position: fixed;
