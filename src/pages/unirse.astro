@@ -1,0 +1,196 @@
+---
+// Página de invitación: https://hogargo-web.vercel.app/unirse?c=CÓDIGO
+// Abre la app con el código si está instalada; si no, lleva a Google Play y la app lo
+// recupera al instalarse (referrer «invite=CÓDIGO»).
+const paquete = "com.mbn.hogargo";
+const title = "Te han invitado a un hogar | HogarGo";
+const description = "Únete a un hogar en HogarGo para repartir tareas, compra y gastos.";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#005cff" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content="Te han invitado a un hogar en HogarGo" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/logoandroid.png" />
+    <link rel="icon" type="image/png" href="/logoandroid.png" />
+  </head>
+
+  <body>
+    <header class="top">
+      <a class="brand" href="/" aria-label="HogarGo, inicio">
+        <img src="/logoandroid.png" alt="" width="40" height="40" />
+        <span>HogarGo</span>
+      </a>
+    </header>
+
+    <main class="card">
+      <img class="logo" src="/logoandroid.png" alt="" width="88" height="88" />
+      <h1>Te han invitado a un hogar</h1>
+      <p class="lead">
+        Únete en HogarGo para repartir las tareas, la lista de la compra y los gastos de casa.
+      </p>
+
+      <div class="codigo" id="bloque-codigo" hidden>
+        <span>Código de invitación</span>
+        <strong id="codigo"></strong>
+      </div>
+
+      <a class="boton principal" id="abrir" href={`https://play.google.com/store/apps/details?id=${paquete}`}>
+        Abrir en HogarGo
+      </a>
+      <a class="boton" id="play" href={`https://play.google.com/store/apps/details?id=${paquete}`}>
+        Descargar en Google Play
+      </a>
+
+      <p class="nota">
+        Si ya tienes la app y no se abre, entra en HogarGo y escribe el código en
+        <strong>Unirme a un hogar</strong>.
+      </p>
+      <p class="nota en" lang="en">
+        You've been invited to a home on HogarGo. Open the app or download it from Google Play; the
+        invitation code is applied automatically.
+      </p>
+    </main>
+
+    <script is:inline define:vars={{ paquete }}>
+      const params = new URLSearchParams(location.search);
+      const codigo = (params.get("c") || "").trim().replace(/[^A-Za-z0-9-]/g, "").slice(0, 20);
+      const play = `https://play.google.com/store/apps/details?id=${paquete}` +
+        (codigo ? `&referrer=${encodeURIComponent("invite=" + codigo)}` : "");
+      document.getElementById("play").href = play;
+      if (codigo) {
+        document.getElementById("codigo").textContent = codigo;
+        document.getElementById("bloque-codigo").hidden = false;
+        // Android: abre la app si está instalada; si no, va a Google Play con el código.
+        document.getElementById("abrir").href =
+          `intent://invite?code=${encodeURIComponent(codigo)}#Intent;scheme=hogargo;package=${paquete};` +
+          `S.browser_fallback_url=${encodeURIComponent(play)};end`;
+      } else {
+        document.getElementById("abrir").href = play;
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --blue: #005cff;
+    --blue-2: #008cff;
+    --ink: #07172f;
+    --muted: #38506d;
+    --line: rgba(0, 92, 255, 0.14);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 12% 0%, rgba(53, 182, 255, 0.25), transparent 32%),
+      linear-gradient(180deg, #f5fbff, #eaf6ff 40%, #fff);
+    min-height: 100vh;
+  }
+  .top {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 18px 20px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand img {
+    border-radius: 12px;
+  }
+  .card {
+    max-width: 520px;
+    margin: 12px 16px 40px;
+    margin-inline: max(16px, calc((100% - 520px) / 2));
+    padding: 32px 24px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 70, 170, 0.1);
+    text-align: center;
+    color: var(--muted);
+  }
+  .logo {
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0, 70, 170, 0.18);
+  }
+  h1 {
+    margin: 18px 0 8px;
+    color: var(--ink);
+    font-size: clamp(26px, 6vw, 34px);
+    letter-spacing: -0.03em;
+  }
+  .lead {
+    margin: 0 0 22px;
+    line-height: 1.55;
+  }
+  .codigo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto 22px;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(0, 92, 255, 0.07);
+    border: 1px dashed rgba(0, 92, 255, 0.35);
+  }
+  .codigo span {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+  .codigo strong {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 30px;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .boton {
+    display: block;
+    margin: 10px 0;
+    padding: 15px 18px;
+    border-radius: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--blue);
+    border: 1.5px solid rgba(0, 92, 255, 0.35);
+    background: #fff;
+  }
+  .boton.principal {
+    color: #fff;
+    border: 0;
+    background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    box-shadow: 0 12px 26px rgba(0, 92, 255, 0.25);
+  }
+  .nota {
+    margin: 18px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .nota.en {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.8;
+  }
+</style>
