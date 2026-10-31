@@ -45,13 +45,15 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
   <div class="tipo">Manual de usuario</div>
   <h1>HogarGo</h1>
   <p class="lema" style="color:#fff">Tu casa, organizada entre todos: tareas, compra y gastos en una sola app.</p>
-  <span class="version">Versión 1.3 · Android</span>
+  <span class="version">Versión 1.3.6 · Android</span>
 
   <div class="pilares">
     <div class="pilar"><div class="e">✅</div><strong>Tareas</strong><span>Reparte, planifica y suma puntos</span></div>
     <div class="pilar"><div class="e">💶</div><strong>Gastos</strong><span>Quién paga y quién debe a quién</span></div>
     <div class="pilar"><div class="e">💼</div><strong>Finanzas</strong><span>Tu cuenta, presupuestos y ahorro</span></div>
-    <div class="pilar"><div class="e">🛒</div><strong>Compra</strong><span>Listas compartidas al momento</span></div>
+    <div class="pilar"><div class="e">🛒</div><strong>Compra</strong><span>Listas compartidas, también por voz</span></div>
+    <div class="pilar"><div class="e">🏆</div><strong>Logros</strong><span>Rachas, niveles y retos del hogar</span></div>
+    <div class="pilar"><div class="e">🎁</div><strong>Recompensas</strong><span>Canjea tus puntos por premios</span></div>
   </div>
 
   <img class="movil-portada" src="/manual/img/01_inicio.jpg" alt="Pantalla de inicio de HogarGo">
@@ -64,18 +66,22 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
 
   <nav class="indice">
     <a href="#primeros-pasos"><span class="i">1</span><div><strong>Primeros pasos</strong><span>Cuenta, hogar e invitaciones</span></div><b class="pg">3</b></a>
-    <a href="#inicio"><span class="i">2</span><div><strong>La pantalla de Inicio</strong><span>Ranking y resumen del hogar</span></div><b class="pg">4</b></a>
+    <a href="#inicio"><span class="i">2</span><div><strong>La pantalla de Inicio</strong><span>Resumen del hogar a tu medida</span></div><b class="pg">4</b></a>
     <a href="#tareas" style="--c:var(--lila)"><span class="i">3</span><div><strong>Tareas y puntos</strong><span>Crear, asignar y marcar</span></div><b class="pg">5</b></a>
-    <a href="#planificador" style="--c:var(--lila)"><span class="i">4</span><div><strong>Planificador e historial</strong><span>Programar y revisar</span></div><b class="pg">6</b></a>
-    <a href="#gastos" style="--c:var(--verde)"><span class="i">5</span><div><strong>Gastos compartidos</strong><span>Movimientos, saldos y liquidar</span></div><b class="pg">7</b></a>
-    <a href="#finanzas" style="--c:var(--verde)"><span class="i">6</span><div><strong>Finanzas personales</strong><span>Mi cuenta y presupuestos</span></div><b class="pg">8</b></a>
-    <a href="#compra" style="--c:var(--naranja)"><span class="i">7</span><div><strong>Lista de la compra</strong><span>Listas y productos</span></div><b class="pg">9</b></a>
-    <a href="#configuracion" style="--c:var(--texto-2)"><span class="i">8</span><div><strong>Configuración</strong><span>Hogares, usuarios y ajustes</span></div><b class="pg">10</b></a>
-    <a href="#hogarplus" style="--c:var(--bronce-osc)"><span class="i">9</span><div><strong>HogarPlus</strong><span>Gratis frente a Plus</span></div><b class="pg">11</b></a>
-    <a href="#ayuda" style="--c:var(--marca-osc)"><span class="i">?</span><div><strong>Preguntas frecuentes</strong><span>Dudas habituales y contacto</span></div><b class="pg">12</b></a>
+    <a href="#planificador" style="--c:var(--lila)"><span class="i">4</span><div><strong>Planificador e historial</strong><span>Programar, repartir y revisar</span></div><b class="pg">6</b></a>
+    <a href="#logros" style="--c:var(--ocre)"><span class="i">5</span><div><strong>Logros, rachas y retos</strong><span>Niveles e insignias</span></div><b class="pg">7</b></a>
+    <a href="#recompensas" style="--c:var(--bronce-osc)"><span class="i">6</span><div><strong>Recompensas</strong><span>Canjea puntos por premios</span></div><b class="pg">8</b></a>
+    <a href="#gastos" style="--c:var(--verde)"><span class="i">7</span><div><strong>Gastos compartidos</strong><span>Movimientos, saldos y liquidar</span></div><b class="pg">9</b></a>
+    <a href="#economia-avanzada" style="--c:var(--verde)"><span class="i">8</span><div><strong>Economía en automático</strong><span>Tickets, fijos, metas e informes</span></div><b class="pg">10</b></a>
+    <a href="#finanzas" style="--c:var(--verde)"><span class="i">9</span><div><strong>Finanzas personales</strong><span>Mi cuenta y presupuestos</span></div><b class="pg">11</b></a>
+    <a href="#compra" style="--c:var(--naranja)"><span class="i">10</span><div><strong>Lista de la compra</strong><span>Listas, voz y texto pegado</span></div><b class="pg">12</b></a>
+    <a href="#widget" style="--c:var(--marca-osc)"><span class="i">11</span><div><strong>Widget y avisos</strong><span>Tu día, sin abrir la app</span></div><b class="pg">13</b></a>
+    <a href="#configuracion" style="--c:var(--texto-2)"><span class="i">12</span><div><strong>Configuración</strong><span>Hogares, usuarios y ajustes</span></div><b class="pg">14</b></a>
+    <a href="#hogarplus" style="--c:var(--bronce-osc)"><span class="i">13</span><div><strong>HogarPlus</strong><span>Gratis frente a Plus</span></div><b class="pg">15</b></a>
+    <a href="#ayuda" style="--c:var(--marca-osc)"><span class="i">?</span><div><strong>Preguntas frecuentes</strong><span>Dudas habituales y contacto</span></div><b class="pg">16</b></a>
   </nav>
 
-  <h3 style="font-size:13pt;margin:8mm 0 2mm">Mapa de la app</h3>
+  <h3 style="font-size:13pt;margin:5mm 0 2mm">Mapa de la app</h3>
   <p>La barra inferior te lleva a las cuatro secciones. El botón central <strong>+</strong> cambia según dónde estés: crea lo propio de cada pantalla. Configuración está en el engranaje de la cabecera.</p>
 
   <!-- Infografía: barra de navegación -->
@@ -89,7 +95,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <rect x="20" y="8" width="120" height="58" rx="12" fill="#e8edf6"/>
       <text x="80" y="31" font-weight="700" fill="#1f2e47">Hogar</text><text x="80" y="48">Ranking y resumen</text>
       <rect x="148" y="8" width="120" height="58" rx="12" fill="#ecebfa"/>
-      <text x="208" y="31" font-weight="700" fill="#1f2e47">Tareas</text><text x="208" y="48">Gestión, planificador</text><text x="208" y="61" font-size="11">e historial</text>
+      <text x="208" y="31" font-weight="700" fill="#1f2e47">Tareas</text><text x="208" y="48">Planificador, historial</text><text x="208" y="61" font-size="11">y recompensas</text>
       <rect x="372" y="8" width="120" height="58" rx="12" fill="#e0f3ec"/>
       <text x="432" y="31" font-weight="700" fill="#1f2e47">Economía</text><text x="432" y="48">Movimientos</text><text x="432" y="61" font-size="11">y Personal</text>
       <rect x="500" y="8" width="120" height="58" rx="12" fill="#fbe9e1"/>
@@ -139,7 +145,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
   <div class="pasos">
     <div class="paso"><div class="circ">📲<span class="n">1</span></div><h4>Crea tu cuenta</h4><p>Con tu email y contraseña o con <strong>Continúa con Google</strong>.</p></div>
     <div class="paso"><div class="circ">🏠<span class="n">2</span></div><h4>Crea tu hogar</h4><p>Ponle nombre. Puedes cambiarlo después en Configuración → Hogares.</p></div>
-    <div class="paso"><div class="circ">✉️<span class="n">3</span></div><h4>Invita a los demás</h4><p>Genera un <strong>código de invitación</strong> y compártelo.</p></div>
+    <div class="paso"><div class="circ">✉️<span class="n">3</span></div><h4>Invita a los demás</h4><p>Comparte un <strong>enlace de invitación</strong>: entran con un toque.</p></div>
     <div class="paso"><div class="circ">🎉<span class="n">4</span></div><h4>¡A organizar!</h4><p>Todo se sincroniza al momento en los móviles del hogar.</p></div>
   </div>
 
@@ -148,7 +154,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
     <div class="tarjeta col">
       <div style="font-size:20pt">👥</div>
       <h3>Con cuenta sincronizada</h3>
-      <p>Cada uno usa HogarGo en su móvil. Desde <strong>Configuración → Hogares → Generar invitación</strong> creas un código; la otra persona entra en <strong>Unirse a un hogar existente</strong>, lo pega y escribe su nombre.</p>
+      <p>Cada uno usa HogarGo en su móvil. Desde <strong>Configuración → Hogares → Generar invitación</strong> compartes un enlace: basta con tocarlo. También lleva un código para <strong>Unirse a un hogar existente</strong>.</p>
     </div>
     <div class="tarjeta col">
       <div style="font-size:20pt">🧒</div>
@@ -216,10 +222,11 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
 
   <h3 style="font-size:13pt;margin:7mm 0 3mm">Personaliza tu Inicio</h3>
   <div class="fila">
-    <div class="tarjeta col"><h3>👁️ Elige qué ver</h3><p>Activa o desactiva cada tarjeta: ranking, tareas, compra, saldos, finanzas y estadísticas.</p></div>
+    <div class="tarjeta col"><h3>👁️ Elige qué ver</h3><p>Activa o desactiva cada tarjeta: ranking, racha y logros, tareas, compra, saldos, finanzas y estadísticas.</p></div>
     <div class="tarjeta col"><h3>↕️ Ordena a tu gusto</h3><p>Mantén pulsada una tarjeta y arrástrala para cambiar su posición.</p></div>
     <div class="tarjeta col"><h3>👤 Cada uno, el suyo</h3><p>La configuración del Inicio es personal: no cambia la de los demás.</p></div>
   </div>
+  <div class="consejo mt"><span class="ico">🔥</span><div>La tarjeta <strong>Racha y logros</strong> muestra tu racha, tu nivel y la próxima insignia. Tócala para ver todos tus logros.</div></div>
   <div class="pie"><span>Manual de HogarGo</span><span>4</span></div>
 </section>
 
@@ -282,14 +289,14 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
 <section class="pagina" id="planificador" style="--c:var(--lila);--cc:var(--lila-claro)">
   <div class="cab"><div class="num">4</div><div><h2>Planificador e historial</h2><div class="sub">Programa tareas recurrentes y revisa quién hizo qué</div></div></div>
 
-  <p class="entrada">El planificador te guía en tres pasos. Cuando terminas, las tareas aparecen en el calendario de asignaciones de cada persona y en el Inicio.</p>
+  <p class="entrada">El planificador tiene tres bloques. Cuando terminas, las tareas aparecen en el calendario de asignaciones de cada persona y en el Inicio.</p>
   <div class="pasos">
-    <div class="paso"><div class="circ">📋<span class="n">1</span></div><h4>Qué</h4><p>Elige una o varias tareas.</p></div>
+    <div class="paso"><div class="circ">📅<span class="n">1</span></div><h4>Cuándo</h4><p>Días de la semana o selección de días concretos.</p></div>
     <div class="paso"><div class="circ">🙋<span class="n">2</span></div><h4>Quién</h4><p>Selecciona a los usuarios.</p></div>
-    <div class="paso"><div class="circ">📅<span class="n">3</span></div><h4>Cuándo</h4><p>Días de la semana o selección de días concretos.</p></div>
+    <div class="paso"><div class="circ">📋<span class="n">3</span></div><h4>Qué</h4><p>Elige una o varias tareas.</p></div>
   </div>
 
-  <h3 style="font-size:13pt;margin:7mm 0 3mm">Modos de repetición</h3>
+  <h3 style="font-size:13pt;margin:5mm 0 3mm">Modos de repetición</h3>
   <!-- Infografía: calendario con repeticiones -->
   <div class="fila" style="gap:4mm">
     <div class="tarjeta col" style="text-align:center">
@@ -320,8 +327,14 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
   </div>
 
   <div class="fila mt" style="gap:7mm">
-    <div class="col-movil" style="width:50mm;flex:none"><img class="movil" src="/manual/img/03_planificador.jpg" alt="Planificador"></div>
-    <div class="col-movil" style="width:50mm;flex:none"><img class="movil" src="/manual/img/04_historial.jpg" alt="Historial de tareas"></div>
+    <div class="col-movil" style="width:46mm;flex:none"><img class="movil" src="/manual/img/04_historial.jpg" alt="Historial de tareas"></div>
+    <div class="col">
+      <div class="tarjeta" style="background:var(--bronce-claro);border-color:#e6d6bf">
+        <h3>✨ Reparto automático <span class="etiqueta" style="background:#fff">PLUS</span></h3>
+        <p>Elige al menos dos personas y actívalo en <strong>Quién</strong>. Cada tarea va a una sola persona: la que menos puntos lleva acumulados. Si hay empate, se turnan.</p>
+        <img src="/manual/img/tareas_reparto.webp" alt="Interruptor de reparto automático en el planificador" style="width:100%;border-radius:3mm;margin-top:1.5mm">
+      </div>
+    </div>
     <div class="col">
       <div class="tarjeta">
         <h3>Historial de tareas</h3>
@@ -332,15 +345,111 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
           <li><strong>Desliza a la izquierda</strong> para borrarlo.</li>
         </ul>
       </div>
-      <div class="consejo mt"><span class="ico">⭐</span><div>Con <strong>HogarPlus</strong> tienes el historial completo de registros y asignaciones, sin límite de fechas.</div></div>
+      <div class="consejo mt"><span class="ico">⭐</span><div>El plan gratuito guarda <strong>30 días</strong>. Con <strong>HogarPlus</strong>, el historial completo.</div></div>
     </div>
   </div>
   <div class="pie"><span>Manual de HogarGo</span><span>6</span></div>
 </section>
 
+<!-- ================= LOGROS ================= -->
+<section class="pagina" id="logros" style="--c:var(--ocre);--cc:var(--ocre-claro)">
+  <div class="cab"><div class="num">5</div><div><h2>Logros, rachas y retos</h2><div class="sub">Cada tarea te acerca a algo: una racha, un nivel, una insignia</div></div></div>
+
+  <!-- Infografía: nivel, reto y racha -->
+  <svg viewBox="0 0 640 196" width="100%" role="img" aria-label="Ejemplo: nivel 4 con 420 de 500 puntos, reto del hogar con 8 de 10 tareas y racha de 5 días">
+    <g font-family="Plus Jakarta Sans, sans-serif">
+      <rect x="0" y="0" width="312" height="88" rx="14" fill="#f6ecdc"/>
+      <text x="16" y="34" font-size="20">🎖️</text>
+      <text x="48" y="33" font-size="15" font-weight="800" fill="#1f2e47">Nivel 4</text>
+      <text x="296" y="33" font-size="12" fill="#4a5468" text-anchor="end">420 / 500 pts</text>
+      <rect x="16" y="50" width="280" height="10" rx="5" fill="#fff"/><rect x="16" y="50" width="168" height="10" rx="5" fill="#ba7517"/>
+      <text x="16" y="78" font-size="10.5" fill="#4a5468">Tus puntos de siempre suben tu nivel, hasta el 50</text>
+      <rect x="328" y="0" width="312" height="88" rx="14" fill="#e0f3ec"/>
+      <text x="344" y="34" font-size="20">🙌</text>
+      <text x="376" y="33" font-size="15" font-weight="800" fill="#1f2e47">Reto del hogar</text>
+      <text x="624" y="33" font-size="12" fill="#4a5468" text-anchor="end">8 de 10</text>
+      <rect x="344" y="50" width="280" height="10" rx="5" fill="#fff"/><rect x="344" y="50" width="224" height="10" rx="5" fill="#1d9e75"/>
+      <text x="344" y="78" font-size="10.5" fill="#4a5468">5 tareas por persona a la semana · +20 pts para cada uno</text>
+      <rect x="0" y="104" width="640" height="88" rx="14" fill="#fbe9e1"/>
+      <text x="16" y="136" font-size="14" font-weight="800" fill="#1f2e47">Racha de 5 días</text>
+      <text x="16" y="156" font-size="10.5" fill="#4a5468">Haz una tarea cada día</text>
+      <text x="16" y="171" font-size="10.5" fill="#4a5468">para mantenerla</text>
+      <g text-anchor="middle" font-size="11" font-weight="700" fill="#4a5468">
+        <text x="222" y="178">L</text><text x="282" y="178">M</text><text x="342" y="178">X</text><text x="402" y="178">J</text><text x="462" y="178">V</text><text x="522" y="178">S</text><text x="582" y="178">D</text>
+      </g>
+      <g fill="#fff" stroke="#d85a30" stroke-width="2">
+        <circle cx="222" cy="136" r="21"/><circle cx="282" cy="136" r="21"/><circle cx="342" cy="136" r="21"/><circle cx="402" cy="136" r="21"/><circle cx="462" cy="136" r="21"/>
+      </g>
+      <g fill="none" stroke="#e8b9a6" stroke-width="2" stroke-dasharray="4 4"><circle cx="522" cy="136" r="21"/><circle cx="582" cy="136" r="21"/></g>
+      <g text-anchor="middle" font-size="19"><text x="222" y="143">🔥</text><text x="282" y="143">🔥</text><text x="342" y="143">🔥</text><text x="402" y="143">🔥</text><text x="462" y="143">🔥</text></g>
+    </g>
+  </svg>
+
+  <div class="fila mt" style="gap:8mm;align-items:flex-start">
+    <div class="col">
+      <ul class="marcas">
+        <li><span class="b">🔥</span><div><strong>Racha</strong><span>Días seguidos con al menos una tarea. Si hoy aún no has hecho ninguna, te avisa.</span></div></li>
+        <li><span class="b">⭐</span><div><strong>Nivel</strong><span>Cada nivel cuesta un poco más: pasar del nivel 4 al 5 son 200 puntos.</span></div></li>
+        <li><span class="b">🏅</span><div><strong>39 insignias</strong><span>21 de tareas y 18 de economía. Las pendientes muestran cuánto te falta, y algunas son secretas.</span></div></li>
+        <li><span class="b">🙌</span><div><strong>Reto del hogar</strong><span>Un objetivo semanal entre todos. Cumplirlo da +20 puntos a cada uno para canjear en Recompensas.</span></div></li>
+      </ul>
+    </div>
+    <div class="col-movil" style="width:70mm;flex:none"><img class="movil" style="border-radius:3mm" src="/manual/img/logros1.webp" alt="Pantalla Tus logros: nivel, reto del hogar y racha"></div>
+  </div>
+
+  <div class="fila mt" style="gap:7mm;align-items:center">
+    <div class="col-movil" style="width:70mm;flex:none"><img class="movil" style="border-radius:3mm" src="/manual/img/logros2.webp" alt="Insignias conseguidas, pendientes y secretas"></div>
+    <div class="col">
+      <div class="tarjeta"><h3>📤 Comparte tus insignias</h3><p>Toca una insignia conseguida y compártela con una imagen por WhatsApp, Instagram o donde quieras.</p></div>
+      <div class="tarjeta mt"><h3>👀 Mira a los demás</h3><p>Arriba puedes cambiar de persona y ver los logros del resto del hogar.</p></div>
+    </div>
+  </div>
+  <div class="consejo mt"><span class="ico">🗓️</span><div>Cada mes HogarGo te prepara un <strong>resumen</strong> con tus tareas, tu gasto, tu ahorro y tus insignias. Con HogarPlus lo ves completo.</div></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>7</span></div>
+</section>
+
+<!-- ================= RECOMPENSAS ================= -->
+<section class="pagina" id="recompensas" style="--c:var(--bronce-osc);--cc:var(--bronce-claro)">
+  <div class="cab"><div class="num">6</div><div><h2>Recompensas <span class="etiqueta" style="vertical-align:middle">PLUS</span></h2><div class="sub">Los puntos de las tareas se canjean por premios que decidís en casa</div></div></div>
+
+  <div class="pasos">
+    <div class="paso"><div class="circ">✅<span class="n">1</span></div><h4>Haz tareas</h4><p>Cada tarea suma sus puntos.</p></div>
+    <div class="paso"><div class="circ">🎁<span class="n">2</span></div><h4>Cread premios</h4><p>Con el coste en puntos que queráis.</p></div>
+    <div class="paso"><div class="circ">🤝<span class="n">3</span></div><h4>Canjea</h4><p>Elige quién lo canjea y confirma.</p></div>
+    <div class="paso"><div class="circ">📦<span class="n">4</span></div><h4>Entrega</h4><p>Márcalo como entregado.</p></div>
+  </div>
+
+  <div class="fila mt" style="gap:9mm;align-items:flex-start">
+    <div class="col-movil" style="width:72mm;flex:none"><img class="movil" style="border-radius:4mm" src="/manual/img/tareas_recompensas.webp" alt="Pantalla de Recompensas con puntos disponibles, premios y pendientes de entregar"></div>
+    <div class="col">
+      <ul class="marcas">
+        <li><span class="b">1</span><div><strong>Puntos disponibles</strong><span>Lo que cada persona puede gastar ahora mismo.</span></div></li>
+        <li><span class="b">2</span><div><strong>Premios</strong><span>Crea los vuestros con «Nuevo premio» o usa la lista sugerida: elegir la peli, librarse de fregar…</span></div></li>
+        <li><span class="b">3</span><div><strong>Pendientes de entregar</strong><span>Lo canjeado que aún no se ha cumplido. Márcalo al entregarlo o deshaz el canje.</span></div></li>
+        <li><span class="b">4</span><div><strong>Historial</strong><span>Todos los canjes del hogar y los puntos gastados.</span></div></li>
+      </ul>
+      <h3 style="font-size:12pt;margin:4mm 0 2mm">¿De dónde salen los puntos?</h3>
+      <!-- Infografía: fórmula de puntos canjeables -->
+      <svg viewBox="0 0 300 150" width="100%" role="img" aria-label="Puntos para canjear igual a puntos de tareas más bonos de retos menos lo ya canjeado">
+        <g font-family="Plus Jakarta Sans, sans-serif" font-size="12">
+          <rect x="0" y="0" width="300" height="150" rx="12" fill="#f3ece3"/>
+          <text x="14" y="26" fill="#1f2e47">✅  Puntos de tareas</text><text x="286" y="26" fill="#1d9e75" font-weight="800" text-anchor="end">+ 95</text>
+          <text x="14" y="52" fill="#1f2e47">🙌  Bonos de retos</text><text x="286" y="52" fill="#1d9e75" font-weight="800" text-anchor="end">+ 40</text>
+          <text x="14" y="78" fill="#1f2e47">🎁  Ya canjeado</text><text x="286" y="78" fill="#c0392b" font-weight="800" text-anchor="end">− 50</text>
+          <line x1="14" y1="92" x2="286" y2="92" stroke="#9b7a52" stroke-width="1.5"/>
+          <text x="14" y="120" font-weight="800" fill="#1f2e47" font-size="13">Para canjear</text><text x="286" y="122" font-weight="800" fill="#9b7a52" font-size="19" text-anchor="end">85 pts</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="consejo mt-auto"><span class="ico">🏆</span><div><strong>Tu ranking no baja al canjear.</strong> El ranking y el nivel dependen de las tareas hechas. Los bonos del reto solo sirven para canjear: no suman al ranking ni al nivel.</div></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>8</span></div>
+</section>
+
 <!-- ================= 7. GASTOS COMPARTIDOS ================= -->
 <section class="pagina" id="gastos" style="--c:var(--verde);--cc:var(--verde-claro)">
-  <div class="cab"><div class="num">5</div><div><h2>Gastos compartidos</h2><div class="sub">Quién paga, cómo se reparte y quién debe a quién</div></div></div>
+  <div class="cab"><div class="num">7</div><div><h2>Gastos compartidos</h2><div class="sub">Quién paga, cómo se reparte y quién debe a quién</div></div></div>
 
   <div class="pasos">
     <div class="paso"><div class="circ">🧾<span class="n">1</span></div><h4>Apunta</h4><p>Una compra, un pago o un ingreso.</p></div>
@@ -369,7 +478,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <text x="352" y="80" font-size="22" text-anchor="middle">⚖️</text>
       <text x="352" y="104" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">Saldos</text>
       <path d="M408 85 H452" stroke="#1d9e75" stroke-width="2.5" marker-end="url(#flv)"/>
-      <rect x="460" y="30" width="180" height="110" rx="14" fill="#e0f3ec" stroke="#1d9e75" stroke-width="2"/>
+      <rect x="461" y="30" width="177" height="110" rx="14" fill="#e0f3ec" stroke="#1d9e75" stroke-width="2"/>
       <text x="550" y="60" font-size="11" fill="#4a5468" text-anchor="middle">Resultado</text>
       <text x="550" y="88" font-size="16" font-weight="800" fill="#1f2e47" text-anchor="middle">Juan → Ana</text>
       <text x="550" y="120" font-size="24" font-weight="800" fill="#1d9e75" text-anchor="middle">20 €</text>
@@ -386,6 +495,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
           <li>Despliega el <strong>Balance del mes</strong> para ver quién debe a quién y liquidar.</li>
           <li>Cambia de mes con las flechas, busca y filtra movimientos.</li>
           <li>Pulsa <strong>+</strong> para añadir un gasto, pago o ingreso.</li>
+          <li>Con HogarPlus, <strong>Escanear ticket</strong> y <strong>Repetir cada mes</strong> (página siguiente).</li>
         </ul>
       </div>
       <div class="tarjeta mt">
@@ -395,12 +505,57 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <div class="consejo mt"><span class="ico">🔔</span><div>Activa las <strong>notificaciones de economía</strong> para enterarte de gastos, ingresos y liquidaciones.</div></div>
     </div>
   </div>
-  <div class="pie"><span>Manual de HogarGo</span><span>7</span></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>9</span></div>
+</section>
+
+<!-- ================= ECONOMÍA EN AUTOMÁTICO ================= -->
+<section class="pagina" id="economia-avanzada" style="--c:var(--verde);--cc:var(--verde-claro)">
+  <div class="cab"><div class="num">8</div><div><h2>Economía en automático <span class="etiqueta" style="vertical-align:middle">PLUS</span></h2><div class="sub">Menos teclear: tickets, gastos fijos, metas e informes</div></div></div>
+
+  <div class="fila" style="gap:5mm;align-items:stretch">
+    <div class="tarjeta col">
+      <h3>🧾 Escanear ticket</h3>
+      <p>En el formulario de gasto, haz una foto o elige una de la galería. HogarGo rellena el importe, el comercio y la fecha. Revisa los datos y guarda.</p>
+      <!-- Infografía: del ticket al gasto -->
+      <svg viewBox="0 0 270 120" width="100%" role="img" aria-label="La foto del ticket se convierte en un gasto con importe, comercio y fecha">
+        <defs><marker id="flt" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1d9e75"/></marker></defs>
+        <g font-family="Plus Jakarta Sans, sans-serif">
+          <path d="M16 6 h76 v100 l-9 -7 -9 7 -10 -7 -10 7 -10 -7 -10 7 -9 -7 z" fill="#fff" stroke="#9aa8bf" stroke-width="2"/>
+          <g stroke="#c5cfdd" stroke-width="3" stroke-linecap="round"><path d="M28 24 h52"/><path d="M28 38 h40"/><path d="M28 52 h46"/></g>
+          <path d="M28 72 h52" stroke="#1f2e47" stroke-width="4" stroke-linecap="round"/>
+          <path d="M104 56 h40" stroke="#1d9e75" stroke-width="3" marker-end="url(#flt)"/>
+          <rect x="154" y="12" width="116" height="88" rx="12" fill="#e0f3ec"/>
+          <text x="166" y="36" font-size="10" fill="#4a5468">Importe</text><text x="258" y="36" font-size="11" font-weight="800" fill="#1f2e47" text-anchor="end">23,40 €</text>
+          <text x="166" y="60" font-size="10" fill="#4a5468">Comercio</text><text x="258" y="60" font-size="11" font-weight="800" fill="#1f2e47" text-anchor="end">Súper</text>
+          <text x="166" y="84" font-size="10" fill="#4a5468">Fecha</text><text x="258" y="84" font-size="11" font-weight="800" fill="#1f2e47" text-anchor="end">Hoy</text>
+        </g>
+      </svg>
+    </div>
+    <div class="tarjeta col">
+      <h3>🔁 Gastos recurrentes</h3>
+      <p>En Movimientos tienes su tarjeta. Activa <strong>Repetir cada mes</strong> al crear el gasto: alquiler, luz o internet se apuntan solos, con el mismo importe y reparto. Si dejas de repetir uno, los meses ya apuntados se quedan.</p>
+      <img src="/manual/img/economia_recurrentes.webp" alt="Lista de gastos recurrentes con alquiler e internet" style="width:100%;border-radius:3mm">
+    </div>
+  </div>
+
+  <div class="fila mt" style="gap:5mm;align-items:stretch">
+    <div class="tarjeta col">
+      <h3>🏖️ Metas de ahorro del hogar</h3>
+      <p>Ahorrad juntos para algo: vacaciones, un sofá… Cada uno aporta lo suyo y veis cuánto falta. Las aportaciones no cuentan como gastos del hogar.</p>
+      <img src="/manual/img/economia_metas.webp" alt="Meta Vacaciones: 525 de 1.500 euros, con aportaciones de cada persona" style="width:100%;border-radius:3mm">
+    </div>
+    <div class="tarjeta col">
+      <h3>📊 Informes en PDF y CSV</h3>
+      <p>En <strong>Estadísticas</strong>, exporta el informe del mes o del año: tareas, gastos y quién aportó más. En PDF con gráficos, o en CSV con todos los datos.</p>
+      <img src="/manual/img/economia_informe.webp" alt="Diálogo de exportar informe y vista del informe mensual" style="width:100%;border-radius:3mm">
+    </div>
+  </div>
+    <div class="pie"><span>Manual de HogarGo</span><span>10</span></div>
 </section>
 
 <!-- ================= 8. FINANZAS PERSONALES ================= -->
 <section class="pagina" id="finanzas" style="--c:var(--verde);--cc:var(--verde-claro)">
-  <div class="cab"><div class="num">6</div><div><h2>Finanzas personales</h2><div class="sub">Tu dinero, mes a mes, en la pestaña Personal</div></div></div>
+  <div class="cab"><div class="num">9</div><div><h2>Finanzas personales</h2><div class="sub">Tu dinero, mes a mes, en la pestaña Personal</div></div></div>
 
   <h3 style="font-size:13pt;margin:0 0 3mm">La fórmula del balance del mes</h3>
   <!-- Infografía: fórmula -->
@@ -454,26 +609,34 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
           </g>
         </g>
       </svg>
-      <div class="tarjeta mt"><h3>🎯 Metas de ahorro</h3><p>Ponte un objetivo y sigue cuánto llevas ahorrado desde el Inicio.</p></div>
+      <div class="tarjeta mt"><h3>🧮 ¿Qué cuenta como «Gastado»?</h3><p>Tus gastos personales más lo que has pagado tú en el hogar. Liquidar una deuda no cambia tu balance: lo que pagas o cobras compensa el saldo.</p></div>
     </div>
     <div class="col-movil" style="width:58mm;flex:none"><img class="movil" src="/manual/img/06_finanzas.jpg" alt="Finanzas personales"></div>
   </div>
-  <div class="pie"><span>Manual de HogarGo</span><span>8</span></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>11</span></div>
 </section>
 
 <!-- ================= 9. COMPRA ================= -->
 <section class="pagina" id="compra" style="--c:var(--naranja);--cc:var(--naranja-claro)">
-  <div class="cab"><div class="num">7</div><div><h2>Lista de la compra</h2><div class="sub">Listas compartidas que se actualizan en tiempo real</div></div></div>
+  <div class="cab"><div class="num">10</div><div><h2>Lista de la compra</h2><div class="sub">Listas compartidas que se actualizan en tiempo real</div></div></div>
 
   <div class="fila" style="gap:9mm">
     <div class="col">
       <div class="pasos vertical" style="flex-direction:column;gap:5mm">
         <div class="paso" style="display:flex;gap:4mm;text-align:left;align-items:center"><div class="circ" style="margin:0;flex:none">📝<span class="n">1</span></div><div><h4>Crea una lista</h4><p>Ponle nombre: «Súper», «Fiesta del sábado»…</p></div></div>
-        <div class="paso" style="display:flex;gap:4mm;text-align:left;align-items:center"><div class="circ" style="margin:0;flex:none">🥫<span class="n">2</span></div><div><h4>Añade productos</h4><p>Elige de tu catálogo o crea productos nuevos. Se agrupan por categoría.</p></div></div>
+        <div class="paso" style="display:flex;gap:4mm;text-align:left;align-items:center"><div class="circ" style="margin:0;flex:none">🥫<span class="n">2</span></div><div><h4>Añade productos</h4><p>Pulsa + y busca en el catálogo, ajusta las unidades o crea un producto nuevo. Se agrupan por categoría.</p></div></div>
         <div class="paso" style="display:flex;gap:4mm;text-align:left;align-items:center"><div class="circ" style="margin:0;flex:none">🛒<span class="n">3</span></div><div><h4>Ve a comprar</h4><p>Marca cada producto según lo metes en el carro.</p></div></div>
         <div class="paso" style="display:flex;gap:4mm;text-align:left;align-items:center"><div class="circ" style="margin:0;flex:none">🔄<span class="n">4</span></div><div><h4>Todos al día</h4><p>Los demás ven al momento lo que falta y lo que ya está.</p></div></div>
       </div>
 
+      <div class="tarjeta mt" style="background:var(--naranja-claro);border-color:#f3cdbd">
+        <h3>🎙️ Dicta o pega tu lista</h3>
+        <p>Toca el micrófono y di lo que necesitas, o pega la lista que te han mandado. Se separa sola y lo añades todo de un toque.</p>
+        <img src="/manual/img/compra4.webp" alt="Añadir productos: yogures, arroz, zumo y servilletas se separan en 4 artículos" style="width:100%;border-radius:3mm;margin-top:1mm">
+      </div>
+    </div>
+    <div style="width:72mm;flex:none">
+      <div class="col-movil"><img class="movil" src="/manual/img/07_compra.jpg" alt="Lista de la compra"></div>
       <div class="tarjeta mt">
         <h3>Tu propio catálogo</h3>
         <p>HogarGo trae productos habituales de serie. Añade los vuestros y quedan guardados para la próxima lista.</p>
@@ -483,23 +646,70 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
         <p>El plan gratuito incluye una lista. Con HogarPlus, todas las que quieras: súper, farmacia, bricolaje…</p>
       </div>
     </div>
-    <div class="col-movil" style="width:72mm;flex:none"><img class="movil" src="/manual/img/07_compra.jpg" alt="Lista de la compra"></div>
   </div>
 
   <div class="consejo mt-auto"><span class="ico">💡</span><div>Desde el Inicio, la tarjeta <strong>Compra</strong> te dice cuántos artículos quedan pendientes. Tócala para ir directo a la lista.</div></div>
-  <div class="pie"><span>Manual de HogarGo</span><span>9</span></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>12</span></div>
+</section>
+
+<!-- ================= WIDGET Y AVISOS ================= -->
+<section class="pagina" id="widget" style="--c:var(--marca-osc)">
+  <div class="cab"><div class="num">11</div><div><h2>Widget y avisos</h2><div class="sub">Lo importante del día, sin abrir la app</div></div></div>
+
+  <div class="fila" style="gap:9mm;align-items:center">
+    <div class="col">
+      <!-- Infografía: widget del hogar -->
+      <svg viewBox="0 0 300 250" width="100%" role="img" aria-label="Widget Resumen del hogar con tareas de hoy, lista de la compra y tu saldo">
+        <g font-family="Plus Jakarta Sans, sans-serif">
+          <rect x="0" y="0" width="300" height="250" rx="22" fill="#dde6f7"/>
+          <rect x="14" y="14" width="272" height="78" rx="14" fill="#fff"/>
+          <text x="28" y="38" font-size="13" font-weight="800" fill="#1f2e47">✅ Tareas de hoy</text>
+          <text x="28" y="60" font-size="11.5" fill="#4a5468">Limpiar el baño</text>
+          <text x="28" y="78" font-size="11.5" fill="#4a5468">Sacar la basura y 2 más</text>
+          <text x="272" y="38" font-size="10.5" font-weight="700" fill="#c62828" text-anchor="end">1 atrasadas</text>
+          <rect x="14" y="100" width="272" height="66" rx="14" fill="#fff"/>
+          <text x="28" y="124" font-size="13" font-weight="800" fill="#1f2e47">🛒 Lista de la compra</text>
+          <text x="28" y="148" font-size="11.5" fill="#4a5468">Tomates · Pan · Detergente</text>
+          <rect x="14" y="174" width="272" height="62" rx="14" fill="#fff"/>
+          <text x="28" y="198" font-size="13" font-weight="800" fill="#1f2e47">💶 Tu saldo</text>
+          <text x="28" y="222" font-size="13" font-weight="800" fill="#0b8f6a">Te deben 12,50 €</text>
+        </g>
+      </svg>
+    </div>
+    <div class="col">
+      <h3 style="font-size:13pt;margin-bottom:2mm">Widget «Resumen del hogar»</h3>
+      <p>Tus tareas de hoy, la lista de la compra y tu saldo en la pantalla de inicio del móvil.</p>
+      <ol style="margin:0;padding-left:5mm">
+        <li>Mantén pulsada la pantalla de inicio del móvil.</li>
+        <li>Entra en <strong>Widgets</strong> y busca HogarGo.</li>
+        <li>Arrastra <strong>Resumen del hogar</strong> donde quieras.</li>
+      </ol>
+      <p class="mt" style="font-size:9pt">Si aparece vacío, abre HogarGo una vez para cargar tu resumen.</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:13pt;margin:7mm 0 3mm">Avisos que te ayudan</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm">
+    <div class="tarjeta"><h3>⏰ Recordatorio diario</h3><p>Tus tareas pendientes de hoy, a la hora que elijas. Actívalo en Configuración → Opciones generales.</p></div>
+    <div class="tarjeta"><h3>🔢 Pendientes en el icono</h3><p>El número de tareas pendientes aparece en el icono de la app, sin sonido.</p></div>
+    <div class="tarjeta"><h3>🔥 No pierdas el ritmo</h3><p>Si llevas 3 días sin hacer tareas, HogarGo te anima a retomar y empezar una racha nueva.</p></div>
+    <div class="tarjeta"><h3>🙌 Reto del hogar</h3><p>Te avisa cuando el reto semanal está cerca y cuando lo habéis cumplido.</p></div>
+    <div class="tarjeta"><h3>🏠 Actividad del hogar</h3><p>Tareas registradas, gastos, liquidaciones y artículos añadidos a la compra. Elige cuáles recibir.</p></div>
+    <div class="tarjeta"><h3>🗓️ Resumen del mes</h3><p>Al empezar el mes, aviso de que tu resumen del mes anterior está listo.</p></div>
+  </div>
+  <div class="pie"><span>Manual de HogarGo</span><span>13</span></div>
 </section>
 
 <!-- ================= 10. CONFIGURACIÓN ================= -->
 <section class="pagina" id="configuracion" style="--c:#6b7383">
-  <div class="cab"><div class="num">8</div><div><h2>Configuración</h2><div class="sub">Se abre con el engranaje de la cabecera del Inicio</div></div></div>
+  <div class="cab"><div class="num">12</div><div><h2>Configuración</h2><div class="sub">Se abre con el engranaje de la cabecera del Inicio</div></div></div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm">
-    <div class="tarjeta"><h3>🏠 Hogares</h3><ul><li>Cambia de hogar, renómbralo o crea uno nuevo.</li><li><strong>Generar invitación</strong>: código para que otros se unan.</li><li><strong>Unirse a un hogar existente</strong> con un código.</li><li>Abandona o elimina un hogar.</li></ul></div>
+    <div class="tarjeta"><h3>🏠 Hogares</h3><ul><li>Cambia de hogar, renómbralo o crea uno nuevo.</li><li><strong>Generar invitación</strong>: enlace y código para que otros se unan.</li><li><strong>Unirse a un hogar existente</strong> con un código.</li><li>Abandona o elimina un hogar.</li></ul></div>
     <div class="tarjeta"><h3>👥 Usuarios</h3><ul><li>Edita nombres y elige avatar o foto de perfil.</li><li>Agrega usuarios sin cuenta.</li><li>Consulta puntos, tareas y el calendario de asignaciones de cada uno.</li></ul></div>
     <div class="tarjeta"><h3>🧭 Modo del hogar</h3><ul><li><strong>Compartida</strong>: varias personas, con ranking y saldos.</li><li><strong>Un usuario</strong>: solo tú, tareas, compra y finanzas.</li><li>Elige y ordena los módulos del Inicio.</li></ul></div>
-    <div class="tarjeta"><h3>⚙️ Opciones generales</h3><ul><li>Tema <strong>claro u oscuro</strong>.</li><li>Notificaciones de tareas y de economía.</li><li>Idioma de la aplicación.</li><li>Restaurar valores iniciales y eliminar tu cuenta.</li></ul></div>
-    <div class="tarjeta"><h3>📊 Estadísticas <span class="etiqueta">PLUS</span></h3><p>Análisis detallado de tareas y economía: tendencias, reparto y gasto por categoría.</p></div>
+    <div class="tarjeta"><h3>⚙️ Opciones generales</h3><ul><li>Tema <strong>claro u oscuro</strong> y <strong>color de acento</strong> <span class="etiqueta">PLUS</span>.</li><li>Notificaciones de tareas, economía y compra.</li><li>Recordatorio diario de tareas.</li><li>Idioma de la aplicación.</li><li>Restaurar valores iniciales y eliminar tu cuenta.</li></ul></div>
+    <div class="tarjeta"><h3>📊 Estadísticas <span class="etiqueta">PLUS</span></h3><p>Análisis detallado de tareas y economía. Desde aquí exportas los informes en PDF o CSV.</p></div>
     <div class="tarjeta"><h3>🎓 Tutoriales y Acerca de</h3><p>Repite los tutoriales de cada sección. En Acerca de: contacto, Instagram y valorar la app.</p></div>
   </div>
 
@@ -509,15 +719,15 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
   </div>
 
   <div class="consejo mt-auto" style="background:var(--rojo-claro);color:#7a2a20"><span class="ico">⚠️</span><div><strong style="color:#7a2a20">Ojo con las acciones irreversibles.</strong> Eliminar un hogar, abandonarlo, restaurar valores iniciales o eliminar tu cuenta borran los datos de forma permanente. Para eliminar la cuenta tendrás que escribir <strong style="color:#7a2a20">ELIMINAR</strong> y volver a iniciar sesión.</div></div>
-  <div class="pie"><span>Manual de HogarGo</span><span>10</span></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>14</span></div>
 </section>
 
 <!-- ================= 11. HOGARPLUS ================= -->
 <section class="pagina" id="hogarplus" style="--c:var(--bronce-osc)">
-  <div class="cab"><div class="num">9</div><div><h2>HogarPlus</h2><div class="sub">Una sola suscripción para toda la casa</div></div></div>
+  <div class="cab"><div class="num">13</div><div><h2>HogarPlus</h2><div class="sub">Una sola suscripción para toda la casa</div></div></div>
 
   <!-- Infografía: uno paga, todos disfrutan -->
-  <svg viewBox="0 0 640 130" width="100%" role="img" aria-label="Si un miembro se hace Plus, todos los miembros del hogar disfrutan de HogarPlus">
+  <svg viewBox="0 0 640 130" width="74%" style="margin:0 auto" role="img" aria-label="Si un miembro se hace Plus, todos los miembros del hogar disfrutan de HogarPlus">
     <defs><linearGradient id="gPlus" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9be96"/><stop offset="1" stop-color="#9b7a52"/></linearGradient>
       <marker id="flb" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#9b7a52"/></marker></defs>
     <g font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle">
@@ -537,32 +747,38 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
     </g>
   </svg>
 
-  <h3 style="font-size:13pt;margin:6mm 0 3mm">Gratis frente a Plus</h3>
+  <h3 style="font-size:13pt;margin:4mm 0 2mm">Gratis frente a Plus</h3>
   <table class="comp">
     <thead><tr><th>Función</th><th class="gratis">Gratis</th><th class="plus">⭐ Plus</th></tr></thead>
     <tbody>
-      <tr><td>Tareas, puntos y ranking</td><td class="gratis si">✓</td><td class="plus si">✓</td></tr>
+      <tr><td>Tareas, puntos, ranking y planificador semanal y mensual</td><td class="gratis si">✓</td><td class="plus si">✓</td></tr>
+      <tr><td>Logros, rachas y reto del hogar</td><td class="gratis si">✓</td><td class="plus si">✓</td></tr>
       <tr><td>Gastos compartidos y finanzas personales</td><td class="gratis si">✓</td><td class="plus si">✓</td></tr>
-      <tr><td>Planificador semanal y mensual</td><td class="gratis si">✓</td><td class="plus si">✓</td></tr>
-      <tr><td>Personas por hogar</td><td class="gratis">2</td><td class="plus"><strong>Ilimitadas</strong></td></tr>
-      <tr><td>Hogares por cuenta</td><td class="gratis">1</td><td class="plus"><strong>Ilimitados</strong></td></tr>
-      <tr><td>Listas de la compra</td><td class="gratis">1</td><td class="plus"><strong>Ilimitadas</strong></td></tr>
+      <tr><td>Compra por voz, widget y recordatorios</td><td class="gratis si">✓</td><td class="plus si">✓</td></tr>
+      <tr><td>Personas por hogar · hogares · listas de la compra</td><td class="gratis">2 · 1 · 1</td><td class="plus"><strong>Sin límite</strong></td></tr>
+      <tr><td>Historial de registros y asignaciones</td><td class="gratis">30 días</td><td class="plus"><strong>Completo</strong></td></tr>
       <tr><td>Repetir la planificación todo el año</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
-      <tr><td>Historial completo de registros y asignaciones</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
-      <tr><td>Estadísticas avanzadas de tareas y economía</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Reparto automático y justo de tareas</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Recompensas canjeables con puntos</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Escanear tickets</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Gastos que se repiten cada mes</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Metas de ahorro del hogar</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Informes mensuales y anuales en PDF y CSV</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Estadísticas avanzadas y resumen del mes</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
+      <tr><td>Colores de acento</td><td class="gratis no">—</td><td class="plus si">✓</td></tr>
     </tbody>
   </table>
 
-  <h3 style="font-size:13pt;margin:7mm 0 3mm">Planes disponibles</h3>
+  <h3 style="font-size:13pt;margin:5mm 0 2mm">Planes disponibles</h3>
   <div class="fila" style="gap:3.5mm">
     <div class="tarjeta col" style="text-align:center"><h3>Mensual</h3><p style="font-size:8.8pt">Renovación cada mes</p></div>
     <div class="tarjeta col" style="text-align:center"><h3>6 meses</h3><p style="font-size:8.8pt">Renovación semestral, con ahorro</p></div>
     <div class="tarjeta col" style="text-align:center"><h3>Anual</h3><p style="font-size:8.8pt">Renovación anual, el mayor ahorro</p></div>
     <div class="tarjeta col" style="text-align:center;background:var(--bronce-claro);border-color:#e6d6bf"><h3>Para siempre</h3><p style="font-size:8.8pt">Pago único, de por vida</p></div>
   </div>
-  <p class="mt" style="font-size:9pt">Los precios aparecen en la app según tu país. Las compras se gestionan con Google Play. Si cambias de móvil, usa <strong>Restaurar compras</strong> en la pantalla de HogarPlus.</p>
+  <p style="font-size:8.8pt;margin:2.5mm 0 0">Los precios y las pruebas gratis disponibles aparecen en la app según tu país. Las compras se gestionan con Google Play. Si cambias de móvil, usa <strong>Restaurar compras</strong>.</p>
   <div class="consejo mt-auto"><span class="ico">ℹ️</span><div>Si el plan termina, no pierdes nada: las funciones Plus se bloquean y, si tenías varios hogares, la app vuelve a tu primer hogar. Puedes renovarlo cuando quieras.</div></div>
-  <div class="pie"><span>Manual de HogarGo</span><span>11</span></div>
+  <div class="pie"><span>Manual de HogarGo</span><span>15</span></div>
 </section>
 
 <!-- ================= 12. FAQ ================= -->
@@ -574,9 +790,11 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <div class="q">¿Necesito que todos tengan la app?</div>
       <div class="a">No. Puedes añadir usuarios sin cuenta y apuntarles tú sus tareas y gastos.</div>
       <div class="q">¿Cómo me uno al hogar de otra persona?</div>
-      <div class="a">Pídele un código de invitación. En Configuración → Hogares, pulsa «Unirse a un hogar existente», pega el código y escribe tu nombre.</div>
+      <div class="a">Pídele el enlace de invitación y tócalo. O, con el código, ve a Configuración → Hogares → «Unirse a un hogar existente» y escribe tu nombre.</div>
       <div class="q">Me he equivocado al marcar una tarea.</div>
       <div class="a">Ve al Historial: toca el registro para editarlo o deslízalo a la izquierda para borrarlo. Los puntos se recalculan.</div>
+      <div class="q">¿Los puntos extra del reto cuentan en el ranking?</div>
+      <div class="a">No. Solo sirven para canjear recompensas: no cuentan para el ranking ni para tu nivel. Y canjear tampoco los baja.</div>
       <div class="q">¿Qué pasa si «Mi cuenta» no coincide con mi banco?</div>
       <div class="a">Corrígela con el lápiz en la pestaña Personal. El nuevo valor se arrastra a los meses siguientes.</div>
     </div>
@@ -587,6 +805,8 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <div class="a">No. Inicia sesión con la misma cuenta y todo estará ahí. Si tenías HogarPlus, pulsa «Restaurar compras».</div>
       <div class="q">¿Puedo usar HogarGo yo solo?</div>
       <div class="a">Claro. Activa el modo «Un usuario» en Configuración → Modo del hogar.</div>
+      <div class="q">¿Cómo mantengo la racha?</div>
+      <div class="a">Haz al menos una tarea cada día. Si un día aún no has hecho ninguna, la app te avisa para que no la pierdas.</div>
       <div class="q">¿Cómo elimino mi cuenta?</div>
       <div class="a">Configuración → Opciones generales → Datos de la aplicación → Eliminar mi cuenta. Escribe ELIMINAR y vuelve a iniciar sesión para confirmar.</div>
     </div>
@@ -607,7 +827,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
       <div style="opacity:.92;font-size:10pt">Escríbenos a <a href="mailto:hogargoapp@gmail.com" style="color:#fff;font-weight:700">hogargoapp@gmail.com</a>. Y si HogarGo te resulta útil, una valoración en Google Play nos ayuda muchísimo. ⭐</div>
     </div>
   </div>
-  <div class="pie"><span>Manual de HogarGo · v1.3</span><span>12</span></div>
+  <div class="pie"><span>Manual de HogarGo · v1.3.6</span><span>16</span></div>
 </section>
 
 </main>
@@ -835,7 +1055,7 @@ const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : pat
 
   /* ---------- Tabla Plus ---------- */
   table.comp { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 9.5pt; }
-  table.comp th, table.comp td { padding: 2.6mm 4mm; text-align: left; border-bottom: 1px solid var(--borde); }
+  table.comp th, table.comp td { padding: 1.5mm 4mm; text-align: left; border-bottom: 1px solid var(--borde); }
   table.comp thead th { font-size: 10pt; }
   table.comp th.plus, table.comp td.plus { background: var(--bronce-claro); text-align: center; width: 34mm; }
   table.comp th.gratis, table.comp td.gratis { text-align: center; width: 34mm; }
