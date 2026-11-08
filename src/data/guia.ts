@@ -18,7 +18,13 @@ export const formasDeSumar = [
     icono: "🧒",
     titulo: "Usuario sin cuenta",
     texto:
-      "Para peques o para quien no quiere instalar la app. Tú le apuntas las tareas y los gastos.",
+      "Para quien no quiere instalar la app. Tú le apuntas las tareas y los gastos.",
+  },
+  {
+    icono: "🧸",
+    titulo: "Modo familia",
+    texto:
+      "Añade a tus hijos con su edad: de 6 a 13 años tienen un perfil que gestionáis los adultos y, desde los 14, su propia cuenta.",
   },
   {
     icono: "🙋",
@@ -33,6 +39,8 @@ export const comparativa: { funcion: string; gratis: string; plus: string }[] = 
   { funcion: "Logros, rachas y reto del hogar", gratis: "✓", plus: "✓" },
   { funcion: "Gastos compartidos y finanzas personales", gratis: "✓", plus: "✓" },
   { funcion: "Compra por voz, widget y recordatorios", gratis: "✓", plus: "✓" },
+  { funcion: "Calendario del hogar, cumpleaños y widgets del calendario", gratis: "✓", plus: "✓" },
+  { funcion: "Modo familia y modo infantil", gratis: "✓", plus: "✓" },
   { funcion: "Personas por hogar", gratis: "2", plus: "Sin límite" },
   { funcion: "Hogares por cuenta", gratis: "1", plus: "Sin límite" },
   { funcion: "Listas de la compra", gratis: "1", plus: "Sin límite" },
@@ -83,6 +91,18 @@ export const faqs = [
   {
     q: "¿Qué pasa si «Mi cuenta» no coincide con mi banco?",
     a: "Corrígela con el lápiz en la pestaña Personal. El nuevo valor se arrastra a los meses siguientes.",
+  },
+  {
+    q: "¿Cómo añado a mis hijos?",
+    a: "Quien creó el hogar activa el Modo familia en Configuración → Modo del hogar y los añade en Hijos con su nombre y su mes y año de nacimiento. De 6 a 13 años tienen un perfil que gestionan los adultos y, desde los 14, pueden tener su propia cuenta.",
+  },
+  {
+    q: "¿Qué es el modo infantil?",
+    a: "Una pantalla sencilla para los peques de 6 a 13 años con sus tareas, rutinas, una mascota, premios y mensajes para los adultos. Las tareas que marcan las aprueba un adulto, y para salir hace falta un PIN.",
+  },
+  {
+    q: "¿Puedo pasar mi calendario de Google o del iPhone a HogarGo?",
+    a: "Sí. En el Calendario, con el botón de arriba, importa un archivo .ics de Google Calendar, Outlook o el iPhone. También puedes exportar tus eventos a .ics o añadir uno al calendario del móvil.",
   },
   {
     q: "Si pago HogarPlus, ¿los demás del hogar también lo tienen?",

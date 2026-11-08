@@ -5,7 +5,7 @@ import { pasosInicio, formasDeSumar, comparativa, planes, faqs } from "../data/g
 const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mbn.hogargo";
 const title = "HogarGo | Tareas, planificador, compras y economía compartida del hogar";
 const description =
-  "Organiza tareas del hogar, listas de compra, economía compartida y planificación familiar con HogarGo. Descárgala gratis en Google Play.";
+  "Organiza tareas del hogar, listas de compra, economía compartida, el calendario y la familia con HogarGo. Descárgala gratis en Google Play.";
 const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
 const manualTemas = [
   { id: "primeros-pasos", icono: "🚀", nombre: "Primeros pasos" },
@@ -170,7 +170,7 @@ const faqJsonLd = JSON.stringify({
           }
         </ol>
 
-        <h3 class="sub-head reveal">Tres formas de sumar personas</h3>
+        <h3 class="sub-head reveal">Cuatro formas de sumar personas</h3>
         <div class="formas">
           {
             formasDeSumar.map((f, i) => (
@@ -536,6 +536,69 @@ const faqJsonLd = JSON.stringify({
             </div>
           </article>
 
+          <!-- Calendario -->
+          <article class="feat reveal" style="--c:#2f62b8;--cc:#e3ecfb">
+            <div class="feat__media">
+              <img class="feat__captura" style="margin-top:0;max-width:330px" src="/tutoriales/calendario1.webp" alt="Calendario del hogar de noviembre con el recibo del alquiler y el cumpleaños de Laura el día 7" width="720" height="843" loading="lazy" decoding="async" />
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Calendario del hogar</span>
+              <h3>Todo lo de casa, en un calendario</h3>
+              <ul class="feat__checks">
+                <li><strong>Eventos tuyos o del hogar:</strong> médico, excursiones, reuniones… con hora, repetición y aviso.</li>
+                <li><strong>Tareas planificadas, recibos</strong> de los gastos fijos y <strong>cumpleaños</strong> de todos, sin apuntarlos dos veces.</li>
+                <li><strong>Vista de mes, semana o agenda</strong>, con filtros para ver solo lo tuyo o lo del hogar.</li>
+                <li><strong>Importa y exporta .ics</strong> desde Google Calendar, Outlook o el iPhone.</li>
+                <li><strong>Widgets</strong> de hoy, día, semana o mes en la pantalla de inicio.</li>
+              </ul>
+              <a class="feat__more" href="#tutoriales">Ver el tutorial →</a>
+            </div>
+          </article>
+
+          <!-- Modo familia -->
+          <article class="feat feat--rev reveal" style="--c:#c2477a;--cc:#fbe6ef">
+            <div class="feat__media">
+              <svg viewBox="0 0 400 290" role="img" aria-label="Ejemplo del modo infantil: tareas de hoy de Lucía, una por revisar, y su meta Ir al parque con 40 de 60 puntos">
+                <g font-family="Inter, system-ui, sans-serif">
+                  <rect x="0" y="0" width="400" height="64" rx="14" fill="#fff" stroke="#f3c6d8" />
+                  <text x="14" y="38" font-size="24">🐶</text>
+                  <text x="52" y="30" font-size="16" font-weight="800" fill="#07172f">¡Hola, Lucía!</text>
+                  <text x="52" y="49" font-size="11.5" fill="#38506d">Estas son tus tareas de hoy</text>
+                  <rect x="0" y="76" width="400" height="118" rx="14" fill="#fff" stroke="#f3c6d8" />
+                  <g font-size="13" fill="#07172f">
+                    <text x="44" y="106">Hacer la cama</text>
+                    <text x="44" y="140">Recoger los juguetes</text>
+                    <text x="44" y="174">Leer 20 minutos</text>
+                  </g>
+                  <circle cx="24" cy="101" r="10" fill="#1d9e75" /><path d="M19 101 l3.5 3.5 l6.5 -7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="24" cy="135" r="10" fill="#fdf1d9" stroke="#ba7517" stroke-width="2" />
+                  <circle cx="24" cy="169" r="10" fill="none" stroke="#c9d3e3" stroke-width="2" />
+                  <rect x="262" y="124" width="124" height="22" rx="11" fill="#fdf1d9" />
+                  <text x="324" y="139" font-size="10.5" font-weight="700" fill="#9a5f0f" text-anchor="middle">Por revisar</text>
+                  <text x="386" y="106" font-size="11" font-weight="700" fill="#1d9e75" text-anchor="end">+10 pts</text>
+                  <rect x="0" y="206" width="400" height="84" rx="14" fill="#fff" stroke="#f3c6d8" />
+                  <text x="14" y="236" font-size="18">🛝</text>
+                  <text x="44" y="234" font-size="14" font-weight="800" fill="#07172f">Mi meta: ir al parque</text>
+                  <text x="386" y="234" font-size="12" fill="#38506d" text-anchor="end">40 de 60 pts</text>
+                  <rect x="14" y="250" width="372" height="10" rx="5" fill="#fbe6ef" /><rect x="14" y="250" width="248" height="10" rx="5" fill="#c2477a" />
+                  <text x="14" y="280" font-size="10.5" fill="#38506d">Cada tarea aprobada suma puntos y una pegatina al álbum</text>
+                </g>
+              </svg>
+            </div>
+            <div class="feat__text">
+              <span class="feat__tag">Modo familia</span>
+              <h3>Los peques también ayudan</h3>
+              <ul class="feat__checks">
+                <li><strong>Hijos por edades:</strong> de 6 a 13 años con un perfil que gestionáis los adultos; desde los 14, con su propia cuenta.</li>
+                <li><strong>Tareas de Bebé y de Peques</strong> ya sugeridas. Leer o jugar al aire libre puntúan más.</li>
+                <li><strong>Modo infantil</strong> en el móvil de casa: sus tareas, rutinas de mañana y noche, una mascota que crece, metas y un álbum de pegatinas.</li>
+                <li><strong>Los adultos aprueban</strong> lo que marcan y reciben sus mensajes. Para salir hace falta un PIN.</li>
+                <li><strong>Uso responsable de pantallas,</strong> con consejos basados en la OMS y la Asociación Española de Pediatría.</li>
+              </ul>
+              <a class="feat__more" href="#faq">Preguntas frecuentes →</a>
+            </div>
+          </article>
+
           <!-- Widget y avisos -->
           <article class="feat reveal" style="--c:#3a557f;--cc:#e8edf6">
             <div class="feat__media">
@@ -559,7 +622,7 @@ const faqJsonLd = JSON.stringify({
               <span class="feat__tag">Widget y avisos</span>
               <h3>Tu día, sin abrir la app</h3>
               <ul class="feat__checks">
-                <li><strong>Widget</strong> con tus tareas de hoy, la compra y tu saldo.</li>
+                <li><strong>Widget</strong> con tus tareas de hoy, la compra y tu saldo, y <strong>widgets del calendario</strong> de hoy, día, semana o mes.</li>
                 <li><strong>Recordatorio diario</strong> a la hora que elijas.</li>
                 <li><strong>Pendientes en el icono</strong> de la app, sin sonido.</li>
                 <li>Avisos del <strong>reto del hogar</strong>, de la actividad de casa y de tu <strong>resumen del mes</strong>.</li>

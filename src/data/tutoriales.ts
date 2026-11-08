@@ -217,6 +217,50 @@ export const tutoriales: Tutorial[] = [
       },
     ],
   },
+  {
+    id: "calendario",
+    nombre: "Calendario",
+    icono: "📆",
+    resumen: "Eventos, cumpleaños, avisos y widgets.",
+    pasos: [
+      {
+        imagen: img("calendario1"),
+        titulo: "Todo en un sitio",
+        descripcion:
+          "Aquí ves tus eventos, los compartidos del hogar, las tareas planificadas, los recibos y los cumpleaños. Usa los filtros para quedarte solo con lo que te interesa.",
+      },
+      {
+        imagen: img("calendario2"),
+        titulo: "Mes, semana o agenda",
+        descripcion:
+          "Cambia de vista arriba. Toca un recibo para abrir su movimiento en Economía, ya desplegado.",
+      },
+      {
+        imagen: img("calendario3"),
+        titulo: "Apunta lo que quieras",
+        descripcion:
+          "Médico, recibos, cumpleaños, excursiones… Elige categoría, hora, si se repite y un aviso para que no se te pase.",
+      },
+      {
+        imagen: img("calendario4"),
+        titulo: "Compártelo con el hogar",
+        descripcion:
+          "Los eventos compartidos los ve todo el hogar y les llega un aviso. Al planificar una tarea con fecha también puedes mostrarla en el calendario de todos.",
+      },
+      {
+        imagen: img("calendario5"),
+        titulo: "Los cumpleaños, solos",
+        descripcion:
+          "Pon el cumpleaños de cada persona en Configuración › Usuarios, y el de los peques en Modo familia. Sale cada año en el calendario y avisa ese mismo día.",
+      },
+      {
+        imagen: img("calendario6"),
+        titulo: "Llévalo a todas partes",
+        descripcion:
+          "Con el botón de arriba exporta a .ics o importa los eventos de Google Calendar, Outlook o el iPhone. Y ponlo en la pantalla de inicio con los widgets de hoy, día, semana o mes.",
+      },
+    ],
+  },
 ];
 
 export const funciones = [
@@ -224,12 +268,14 @@ export const funciones = [
   { icono: "🏆", titulo: "Logros y retos", texto: "Rachas, niveles, 39 insignias y un reto semanal para cumplir entre todos." },
   { icono: "🎁", titulo: "Recompensas", texto: "Canjea los puntos por premios que decidís en casa: elegir la peli, librarse de fregar… (HogarPlus)" },
   { icono: "🗓️", titulo: "Planificador", texto: "Cuándo, quién y qué: programa tareas por semanas, días sueltos, el mes entero o el año." },
+  { icono: "📆", titulo: "Calendario del hogar", texto: "Citas, recibos, cumpleaños y tareas en un solo calendario, con avisos, widgets e importar o exportar .ics." },
+  { icono: "🧸", titulo: "Modo familia", texto: "Perfiles de los hijos por edades, tareas de Bebé y Peques y un modo infantil con rutinas, mascota y premios." },
   { icono: "💶", titulo: "Gastos compartidos", texto: "Quién paga y entre quién se reparte. HogarGo calcula quién debe a quién para liquidar." },
   { icono: "🧾", titulo: "Economía en automático", texto: "Escanea tickets, repite los gastos fijos y ahorrad juntos con metas del hogar. (HogarPlus)" },
   { icono: "💼", titulo: "Finanzas personales", texto: "Tu cuenta mes a mes, ingreso estimado y presupuestos por categoría." },
   { icono: "📊", titulo: "Estadísticas e informes", texto: "Análisis de tareas y gastos, e informes del mes o del año en PDF y CSV. (HogarPlus)" },
   { icono: "🛒", titulo: "Lista de la compra", texto: "Listas compartidas en tiempo real. Dicta lo que falta o pega la lista que te han mandado." },
-  { icono: "📲", titulo: "Widget y avisos", texto: "Tus tareas, la compra y tu saldo en la pantalla del móvil, con recordatorio diario." },
+  { icono: "📲", titulo: "Widget y avisos", texto: "Tus tareas, la compra, tu saldo y el calendario en la pantalla del móvil, con recordatorio diario." },
   { icono: "🏠", titulo: "Inicio a tu medida", texto: "Elige qué tarjetas ver y en qué orden. Con modo oscuro y en 9 idiomas." },
   { icono: "👨‍👩‍👧", titulo: "Hogar compartido", texto: "Invita con un enlace, añade usuarios sin cuenta o úsala tú solo en modo «Un usuario»." },
 ];
