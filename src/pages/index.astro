@@ -73,6 +73,23 @@ const faqJsonLd = JSON.stringify({
       <a class="btn btn--small" href={playStoreUrl} target="_blank" rel="noopener noreferrer">
         Descargar
       </a>
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="nav__toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Menú" hidden>
+        <a href="#funciones">Funciones</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#tutoriales">Tutoriales</a>
+        <a href="#hogarplus">HogarPlus</a>
+        <a href="/manual">Manual</a>
+      </nav>
     </header>
 
     <main id="inicio">
@@ -914,6 +931,34 @@ const faqJsonLd = JSON.stringify({
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
 
+      // Menú de navegación en móvil
+      const navToggle = document.getElementById("nav-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      if (nav && navToggle && navMenu) {
+        const setMenu = (open: boolean) => {
+          navMenu.hidden = !open;
+          nav.classList.toggle("nav--open", open);
+          navToggle.setAttribute("aria-expanded", String(open));
+          navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        };
+        navToggle.addEventListener("click", () => setMenu(navMenu.hidden));
+        navMenu.addEventListener("click", (e) => {
+          if ((e.target as HTMLElement).closest("a")) setMenu(false);
+        });
+        document.addEventListener("click", (e) => {
+          if (!navMenu.hidden && !nav.contains(e.target as Node)) setMenu(false);
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && !navMenu.hidden) {
+            setMenu(false);
+            navToggle.focus();
+          }
+        });
+        window.matchMedia("(min-width: 641px)").addEventListener("change", (m) => {
+          if (m.matches) setMenu(false);
+        });
+      }
+
       // Tutoriales interactivos
       const root = document.getElementById("tuto")!;
       const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>(".tab"));
@@ -1074,6 +1119,10 @@ const faqJsonLd = JSON.stringify({
   }
   .nav__links a:hover {
     color: var(--blue);
+  }
+  .nav__toggle,
+  .nav__menu {
+    display: none;
   }
 
   /* BOTONES */
@@ -1617,6 +1666,7 @@ const faqJsonLd = JSON.stringify({
     display: block;
     width: 100%;
     max-width: 440px;
+    height: auto;
     margin: 16px auto 0;
     border-radius: 14px;
   }
@@ -2132,8 +2182,89 @@ const faqJsonLd = JSON.stringify({
     .nav__links {
       display: none;
     }
+    .nav {
+      gap: 12px;
+    }
     .nav .btn {
       margin-left: auto;
+    }
+    .nav--open {
+      background: rgba(245, 251, 255, 0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 6px 24px rgba(0, 60, 160, 0.08);
+    }
+    .nav__toggle {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .nav__toggle-bars,
+    .nav__toggle-bars::before,
+    .nav__toggle-bars::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .nav__toggle-bars {
+      position: relative;
+    }
+    .nav__toggle-bars::before,
+    .nav__toggle-bars::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    .nav__toggle-bars::before {
+      top: -6px;
+    }
+    .nav__toggle-bars::after {
+      top: 6px;
+    }
+    .nav--open .nav__toggle-bars {
+      background: transparent;
+    }
+    .nav--open .nav__toggle-bars::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .nav--open .nav__toggle-bars::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+    .nav__menu:not([hidden]) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 8px 16px 16px;
+      background: rgba(245, 251, 255, 0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 24px rgba(0, 60, 160, 0.1);
+    }
+    .nav__menu a {
+      padding: 14px 4px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav__menu a:last-child {
+      border-bottom: 0;
+    }
+    .nav__menu a:hover,
+    .nav__menu a:focus-visible {
+      color: var(--blue);
     }
     .play {
       padding: 14px 24px 14px 20px;
